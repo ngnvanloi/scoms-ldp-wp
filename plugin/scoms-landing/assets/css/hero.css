@@ -1,0 +1,156 @@
+.scl.scl-hero {
+	--scl-overlay: 55%;
+	position: relative;
+	isolation: isolate;
+	display: flex;
+	align-items: flex-end;
+	min-height: min(88vh, 760px);
+	min-height: min(88svh, 760px);
+	padding-block: clamp(96px, 14vw, 160px) clamp(40px, 7vw, 88px);
+	overflow: hidden;
+	background: #17151d;
+	color: #ffffff;
+}
+
+.scl .scl-hero__bg {
+	position: absolute;
+	inset: 0;
+	z-index: -2;
+	width: 100%;
+	max-width: none;
+	height: 100%;
+	object-fit: cover;
+}
+
+.scl.scl-hero::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background: rgb(0 0 0 / var(--scl-overlay));
+}
+
+.scl .scl-hero__content {
+	max-width: 760px;
+}
+
+.scl .scl-hero__meta {
+	margin-bottom: 16px;
+	font-size: 0.875em;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--scl-accent);
+}
+
+.scl .scl-hero__title {
+	margin-bottom: 20px;
+	font-size: clamp(2.25em, 7vw, 4.5em);
+	font-weight: 800;
+	line-height: 1.05;
+	letter-spacing: -0.02em;
+	text-wrap: balance;
+}
+
+.scl .scl-hero__desc {
+	max-width: 56ch;
+	margin-bottom: 32px;
+	font-size: clamp(1em, 2vw, 1.125em);
+	line-height: 1.6;
+	color: rgb(255 255 255 / 0.86);
+}
+
+.scl .scl-countdown {
+	margin-bottom: 32px;
+}
+
+.scl .scl-countdown__units {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.scl .scl-countdown__unit {
+	min-width: 76px;
+	padding: 12px 10px;
+	border: 1px solid rgb(255 255 255 / 0.24);
+	border-radius: 12px;
+	background: rgb(255 255 255 / 0.06);
+	text-align: center;
+}
+
+.scl .scl-countdown__num {
+	display: block;
+	font-size: 1.75em;
+	font-weight: 700;
+	line-height: 1.1;
+	font-variant-numeric: tabular-nums;
+}
+
+.scl .scl-countdown__label {
+	display: block;
+	margin-top: 4px;
+	font-size: 0.75em;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: rgb(255 255 255 / 0.72);
+}
+
+.scl .scl-countdown[data-ended] .scl-countdown__units {
+	display: none;
+}
+
+.scl .scl-countdown__done {
+	font-weight: 600;
+	color: var(--scl-accent);
+}
+
+.scl .scl-hero__btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 48px;
+	padding: 0 28px;
+	border-radius: 999px;
+	background: var(--scl-accent);
+	font-weight: 700;
+	color: var(--scl-accent-ink);
+	transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.scl .scl-hero__btn:hover,
+.scl .scl-hero__btn:focus-visible {
+	color: var(--scl-accent-ink);
+	filter: brightness(1.08);
+}
+
+@media (hover: hover) {
+	.scl .scl-hero__btn:hover {
+		transform: translateY(-2px);
+	}
+}
+
+.scl .scl-hero__btn:active {
+	transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+	.scl .scl-countdown__unit {
+		min-width: 64px;
+	}
+
+	.scl .scl-countdown__num {
+		font-size: 1.5em;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.scl .scl-hero__btn {
+		transition: none;
+	}
+
+	.scl .scl-hero__btn:hover,
+	.scl .scl-hero__btn:active {
+		transform: none;
+	}
+}

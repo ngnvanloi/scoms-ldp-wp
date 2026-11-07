@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="vi">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="noindex, nofollow">
+	<title>SCOMS Landing - Prototype</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap">
+
+	<link rel="stylesheet" href="dev/mock-site.css">
+
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/base.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/hero.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/agenda.css">
+
+	<script>
+		(function () {
+			if (!new URLSearchParams(location.search).has('theme')) return;
+			document.documentElement.classList.add('is-theme-sim');
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.href = 'dev/theme-sim.css';
+			document.head.appendChild(link);
+			document.addEventListener('DOMContentLoaded', function () {
+				document.body.classList.add('elementor-kit-5');
+			});
+		})();
+	</script>
+</head>
+<body>
+	<header class="mock-header">
+		<span class="mock-header__logo">SCOMS</span>
+		<span class="mock-header__note">Header của theme (giả lập)</span>
+		<nav class="mock-header__nav">
+			<a href="./">CSS sạch</a>
+			<a href="./?theme">Giả lập CSS theme</a>
+		</nav>
+	</header>
+
+	<main>
+		<section class="scl scl-hero">
+			<img class="scl-hero__bg" src="images/hero.svg" alt="" fetchpriority="high">
+			<div class="scl-container">
+				<div class="scl-hero__content">
+					<p class="scl-hero__meta">20.12.2026 - GEM Center, TP.HCM</p>
+					<h1 class="scl-hero__title">Brand Experience Day 2026</h1>
+					<p class="scl-hero__desc">Một ngày gặp gỡ các thương hiệu, agency và nhà sáng tạo nội dung hàng đầu.</p>
+					<div class="scl-countdown" data-scl-countdown="2026-12-20T09:00:00+07:00" role="timer" aria-label="Thời gian còn lại đến sự kiện">
+						<div class="scl-countdown__units">
+							<div class="scl-countdown__unit"><span class="scl-countdown__num" data-unit="days">00</span><span class="scl-countdown__label">Ngày</span></div>
+							<div class="scl-countdown__unit"><span class="scl-countdown__num" data-unit="hours">00</span><span class="scl-countdown__label">Giờ</span></div>
+							<div class="scl-countdown__unit"><span class="scl-countdown__num" data-unit="minutes">00</span><span class="scl-countdown__label">Phút</span></div>
+							<div class="scl-countdown__unit"><span class="scl-countdown__num" data-unit="seconds">00</span><span class="scl-countdown__label">Giây</span></div>
+						</div>
+						<p class="scl-countdown__done" hidden>Sự kiện đã bắt đầu</p>
+					</div>
+					<a class="scl-hero__btn" href="#chuong-trinh">Xem chương trình</a>
+				</div>
+			</div>
+		</section>
+		<section class="scl scl-agenda" id="chuong-trinh">
+			<div class="scl-container scl-container--narrow">
+				<h2 class="scl-agenda__heading">Chương trình</h2>
+				<ol class="scl-agenda__list">
+					<li class="scl-agenda__item">
+						<span class="scl-agenda__time">08:30</span>
+						<div><p class="scl-agenda__title">Đón khách và check-in</p></div>
+					</li>
+					<li class="scl-agenda__item">
+						<span class="scl-agenda__time">09:00</span>
+						<div>
+							<p class="scl-agenda__title">Khai mạc</p>
+							<p class="scl-agenda__speaker">Ban tổ chức</p>
+						</div>
+					</li>
+					<li class="scl-agenda__item">
+						<span class="scl-agenda__time">09:30</span>
+						<div>
+							<p class="scl-agenda__title">Keynote: Thương hiệu trong kỷ nguyên AI</p>
+							<p class="scl-agenda__speaker">Diễn giả khách mời</p>
+						</div>
+					</li>
+					<li class="scl-agenda__item">
+						<span class="scl-agenda__time">11:00</span>
+						<div><p class="scl-agenda__title">Thảo luận nhóm</p></div>
+					</li>
+					<li class="scl-agenda__item">
+						<span class="scl-agenda__time">12:00</span>
+						<div><p class="scl-agenda__title">Networking lunch</p></div>
+					</li>
+				</ol>
+			</div>
+		</section>
+	</main>
+
+	<footer class="mock-footer">Footer của theme (giả lập)</footer>
+
+	<script src="../plugin/scoms-landing/assets/js/countdown.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+html {
+	font-size: 62.5%;
+}
+
+*,
+::before,
+::after {
+	box-sizing: content-box;
+	border: 0 solid;
+}
+
+h1, h2, h3, p {
+	margin: 0 0 2rem;
+}
+
+section {
+	padding: 100px 0;
+	background: #fff6a8;
+}
+
+img {
+	border: 6px solid red;
+	border-radius: 24px;
+}
+
+.elementor-kit-5 {
+	font-family: Georgia, serif;
+	font-size: 19px;
+	line-height: 2.2;
+	color: #333333;
+}
+
+.elementor-kit-5 h1,
+.elementor-kit-5 h2 {
+	font-family: "Times New Roman", serif;
+	font-size: 14px;
+	font-weight: 300;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	color: #c0392b;
+}
+
+.elementor-kit-5 p {
+	margin-bottom: 40px;
+	color: #1e9e57;
+}
+
+.elementor-kit-5 a {
+	color: #e91e63;
+	text-decoration: underline wavy;
+}
+
+.elementor-kit-5 a:hover {
+	color: blue;
+}
+
+.elementor-kit-5 ol,
+.elementor-kit-5 ul,
+.elementor-kit-5 li {
+	padding-left: 2em;
+	list-style: square;
+}
+
+.elementor-kit-5 button {
+	padding: 20px;
+	background: purple;
+	color: #ffffff;
+}
+
+.is-theme-sim .mock-header {
+	outline: 3px solid #e91e63;
+}

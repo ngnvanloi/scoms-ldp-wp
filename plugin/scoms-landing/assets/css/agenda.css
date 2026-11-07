@@ -1,0 +1,51 @@
+.scl.scl-agenda {
+	padding-block: clamp(56px, 9vw, 112px);
+	background: var(--scl-bg);
+	color: var(--scl-text);
+}
+
+.scl .scl-agenda__heading {
+	margin-bottom: clamp(24px, 4vw, 40px);
+	font-size: clamp(1.75em, 4vw, 2.75em);
+	font-weight: 800;
+	line-height: 1.15;
+	letter-spacing: -0.01em;
+}
+
+.scl .scl-agenda__item {
+	display: grid;
+	grid-template-columns: 120px 1fr;
+	gap: 16px;
+	padding-block: 20px;
+	border-top: 1px solid var(--scl-line);
+}
+
+.scl .scl-agenda__item:last-child {
+	border-bottom: 1px solid var(--scl-line);
+}
+
+.scl .scl-agenda__time {
+	font-weight: 700;
+	font-variant-numeric: tabular-nums;
+	color: var(--scl-text);
+}
+
+.scl .scl-agenda__title {
+	font-size: 1.125em;
+	font-weight: 600;
+	line-height: 1.4;
+	overflow-wrap: anywhere;
+}
+
+.scl .scl-agenda__speaker {
+	margin-top: 4px;
+	font-size: 0.95em;
+	color: var(--scl-muted);
+}
+
+@media (max-width: 560px) {
+	.scl .scl-agenda__item {
+		grid-template-columns: 1fr;
+		gap: 4px;
+	}
+}
