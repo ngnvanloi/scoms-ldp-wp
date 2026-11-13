@@ -1,40 +1,4 @@
 body {
 	margin: 0;
-	background: #ffffff;
-}
-
-.mock-header,
-.mock-footer {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 8px 24px;
-	padding: 16px;
-	border: 2px dashed #9a9aa5;
-	background: #ececf0;
-	font: 14px/1.4 system-ui, sans-serif;
-	color: #3a3a44;
-}
-
-.mock-header__logo {
-	font-weight: 800;
-}
-
-.mock-header__note {
-	opacity: 0.7;
-}
-
-.mock-header__nav {
-	display: flex;
-	gap: 16px;
-	margin-left: auto;
-}
-
-.mock-header__nav a {
-	color: #3a3a44;
-}
-
-.mock-footer {
-	justify-content: center;
-	min-height: 120px;
+	background: #fff6e4;
 }

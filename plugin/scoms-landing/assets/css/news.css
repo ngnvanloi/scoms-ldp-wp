@@ -1,0 +1,129 @@
+.scl.scl-nw {
+	padding-block: var(--scl-space);
+	background: var(--scl-cream-2);
+}
+
+.scl .scl-nw__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: clamp(14px, 2vw, 24px);
+}
+
+.scl .scl-nw__card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	aspect-ratio: 16 / 11;
+	padding: 14px;
+	overflow: hidden;
+	border-radius: var(--scl-r-sm);
+	color: var(--scl-white);
+	isolation: isolate;
+}
+
+.scl .scl-nw__thumb {
+	position: absolute;
+	inset: 0;
+	z-index: -2;
+	transition: transform 900ms var(--scl-ease);
+}
+
+.scl .scl-nw__card::after {
+	content: "";
+	position: absolute;
+	inset: 35% 0 0;
+	z-index: -1;
+	background: linear-gradient(180deg, rgb(0 0 0 / 0), rgb(0 0 0 / 0.78));
+}
+
+.scl .scl-nw__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.scl .scl-nw__tag {
+	padding: 3px 8px;
+	border-radius: var(--scl-r-xs);
+	background: var(--scl-red-1);
+	font-size: 0.6875em;
+	font-weight: 800;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--scl-white);
+}
+
+.scl .scl-nw__tag--alt {
+	background: var(--scl-white);
+	color: var(--scl-red);
+}
+
+.scl .scl-nw__bottom {
+	display: grid;
+	gap: 4px;
+}
+
+.scl .scl-nw__date {
+	font-size: 0.75em;
+	font-weight: 700;
+	opacity: 0.8;
+}
+
+.scl .scl-nw__title {
+	font-weight: 800;
+	line-height: 1.35;
+	text-transform: uppercase;
+}
+
+.scl .scl-nw__link {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+.scl .scl-nw__link::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+}
+
+.scl .scl-nw__link:focus-visible {
+	outline: none;
+}
+
+.scl .scl-nw__card:has(.scl-nw__link:focus-visible) {
+	outline: 2px solid var(--scl-red);
+	outline-offset: 3px;
+}
+
+.scl .scl-nw__more {
+	display: flex;
+	justify-content: center;
+	margin-top: clamp(28px, 4vw, 44px);
+}
+
+@media (hover: hover) {
+	.scl .scl-nw__card:hover .scl-nw__thumb {
+		transform: scale(1.06);
+	}
+}
+
+@media (max-width: 960px) {
+	.scl .scl-nw__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 600px) {
+	.scl .scl-nw__grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.scl .scl-nw__thumb {
+		transition: none;
+	}
+}

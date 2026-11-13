@@ -1,0 +1,127 @@
+.scl.scl-nt {
+	padding-block: var(--scl-space);
+	background: var(--scl-cream);
+}
+
+.scl .scl-nt__stage {
+	position: relative;
+	display: grid;
+	padding: clamp(28px, 6vw, 72px) clamp(0px, 4vw, 56px);
+	border-radius: var(--scl-r-lg);
+}
+
+.scl .scl-nt__backdrop {
+	position: absolute;
+	inset: 0;
+	border-radius: var(--scl-r-lg);
+}
+
+.scl .scl-nt__card {
+	position: relative;
+	max-width: 760px;
+	margin-inline: auto;
+	padding: clamp(24px, 4.4vw, 48px);
+	border: 2px solid var(--scl-red-tint);
+	border-radius: var(--scl-r-lg);
+	background: var(--scl-white);
+}
+
+.scl .scl-nt__title {
+	margin-bottom: 16px;
+	font-size: clamp(1.75em, 4vw, 2.75em);
+	font-weight: 800;
+	line-height: 1.12;
+	letter-spacing: -0.02em;
+	text-transform: uppercase;
+	text-align: center;
+	color: var(--scl-red);
+}
+
+.scl .scl-nt__intro {
+	margin-bottom: 24px;
+	font-size: 0.9688em;
+	line-height: 1.65;
+	color: var(--scl-ink-2);
+}
+
+.scl .scl-nt__list {
+	display: grid;
+	gap: 14px;
+}
+
+.scl .scl-nt__item {
+	display: grid;
+	grid-template-columns: 28px minmax(0, 1fr);
+	gap: 12px;
+	font-size: 0.9688em;
+	line-height: 1.6;
+	color: var(--scl-ink);
+}
+
+.scl .scl-nt__num {
+	display: grid;
+	place-items: center;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	background: var(--scl-red);
+	font-size: 0.8125em;
+	font-weight: 800;
+	color: var(--scl-white);
+}
+
+.scl .scl-nt__item strong {
+	font-weight: 700;
+	color: var(--scl-red);
+}
+
+.scl .scl-nt__format {
+	display: grid;
+	gap: 6px;
+	margin-top: 10px;
+	padding: 14px 16px;
+	border-radius: var(--scl-r-sm);
+	background: var(--scl-cream);
+	font-size: 0.875em;
+}
+
+.scl .scl-nt__format code {
+	font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+	font-size: 0.95em;
+	font-weight: 700;
+	overflow-wrap: anywhere;
+	color: var(--scl-red);
+}
+
+.scl .scl-nt__format small {
+	font-size: 0.9em;
+	color: var(--scl-ink-2);
+}
+
+.scl .scl-nt__item--key {
+	margin-top: 6px;
+	padding: 14px 16px;
+	border-radius: var(--scl-r-sm);
+	background: var(--scl-red);
+	color: var(--scl-white);
+}
+
+.scl .scl-nt__item--key .scl-nt__num {
+	background: var(--scl-white);
+	color: var(--scl-red);
+}
+
+.scl .scl-nt__item--key strong {
+	color: var(--scl-white);
+}
+
+@media (max-width: 640px) {
+	.scl .scl-nt__stage {
+		padding-inline: 12px;
+	}
+}
+
+.scl .scl-nt__backdrop.scl-ph {
+	place-items: start end;
+	padding: 16px 20px;
+}

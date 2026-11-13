@@ -1,0 +1,204 @@
+.scl.scl-tm {
+	padding-block: var(--scl-space);
+	background: var(--scl-cream-2);
+}
+
+.scl .scl-tm__grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: clamp(14px, 2vw, 24px);
+}
+
+.scl .scl-tm__card {
+	display: flex;
+	flex: 0 1 calc((100% - 3 * clamp(14px, 2vw, 24px)) / 4);
+	flex-direction: column;
+	gap: 12px;
+	min-width: 0;
+	padding: 12px;
+	border-radius: var(--scl-r-lg);
+	transition: translate var(--scl-tone-t) var(--scl-ease);
+}
+
+.scl.is-ready .scl-tm__card[data-scl-reveal] {
+	transition:
+		opacity var(--scl-dur-l) var(--scl-ease) calc(var(--i, 0) * var(--scl-stagger)),
+		transform var(--scl-dur-l) var(--scl-ease) calc(var(--i, 0) * var(--scl-stagger)),
+		translate var(--scl-tone-t) var(--scl-ease);
+}
+
+.scl .scl-tm__media {
+	position: relative;
+	overflow: hidden;
+	aspect-ratio: 4 / 5;
+	border-radius: var(--scl-r-md);
+}
+
+.scl .scl-tm__media-in {
+	position: absolute;
+	inset: 0;
+	transition: transform 700ms var(--scl-ease);
+}
+
+.scl .scl-tm__media-in.scl-ph {
+	background: var(--scl-white);
+	color: var(--scl-red);
+}
+
+.scl .scl-tm__num {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 1;
+	padding: 2px 8px;
+	border-radius: var(--scl-r-xs);
+	background: var(--scl-red);
+	font-size: 0.75em;
+	font-weight: 700;
+	font-variant-numeric: tabular-nums;
+	color: var(--scl-white);
+}
+
+.scl .scl-tm__body {
+	display: grid;
+	flex: 1;
+	gap: 4px;
+	align-content: start;
+	padding: 4px 6px 0;
+}
+
+.scl .scl-tm__name {
+	font-size: 1.1875em;
+	font-weight: 800;
+	line-height: 1.25;
+	color: var(--scl-black);
+	transition: color calc(var(--scl-tone-t) * 0.75) var(--scl-ease);
+}
+
+.scl .scl-tm__desc {
+	font-size: 0.875em;
+	line-height: 1.5;
+	color: var(--scl-ink);
+	transition: color calc(var(--scl-tone-t) * 0.75) var(--scl-ease) var(--scl-follow);
+}
+
+.scl .scl-tm__apply {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-height: 44px;
+	border-radius: var(--scl-r-xs);
+	background: var(--scl-red);
+	font-size: 0.875em;
+	font-weight: 800;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--scl-white);
+	transition:
+		background-color calc(var(--scl-tone-t) * 0.75) var(--scl-ease) calc(var(--scl-follow) * 2),
+		color calc(var(--scl-tone-t) * 0.75) var(--scl-ease) calc(var(--scl-follow) * 2);
+}
+
+.scl .scl-tm__apply svg {
+	width: 16px;
+	height: 16px;
+	transition: transform 200ms var(--scl-ease);
+}
+
+.scl .scl-tm__card:focus-within .scl-tm__name {
+	color: var(--scl-white);
+}
+
+.scl .scl-tm__card:focus-within .scl-tm__desc {
+	color: rgb(255 255 255 / 0.84);
+}
+
+.scl .scl-tm__card:focus-within .scl-tm__apply {
+	background: var(--scl-white);
+	color: var(--scl-red);
+}
+
+.scl .scl-tm__apply:focus-visible {
+	outline-color: var(--scl-white);
+}
+
+@media (hover: hover) {
+	.scl .scl-tm__card:hover {
+		translate: 0 -4px;
+	}
+
+	.scl .scl-tm__card:hover .scl-tm__media-in {
+		transform: scale(1.05);
+	}
+
+	.scl .scl-tm__card:hover .scl-tm__name {
+		color: var(--scl-white);
+	}
+
+	.scl .scl-tm__card:hover .scl-tm__desc {
+		color: rgb(255 255 255 / 0.84);
+	}
+
+	.scl .scl-tm__card:hover .scl-tm__apply {
+		background: var(--scl-white);
+		color: var(--scl-red);
+	}
+
+	.scl .scl-tm__card .scl-tm__apply:hover {
+		background: var(--scl-cream);
+		color: var(--scl-red);
+		transition-delay: 0ms;
+		transition-duration: var(--scl-dur-q);
+	}
+
+	.scl .scl-tm__apply:hover svg {
+		transform: translateX(3px);
+	}
+}
+
+@media (max-width: 960px) {
+	.scl .scl-tm__card {
+		flex-basis: calc((100% - 2 * clamp(14px, 2vw, 24px)) / 3);
+	}
+}
+
+@media (max-width: 640px) {
+	.scl .scl-tm__card {
+		flex-basis: calc((100% - clamp(14px, 2vw, 24px)) / 2);
+		padding: 8px;
+		border-radius: var(--scl-r-md);
+	}
+
+	.scl .scl-tm__media {
+		border-radius: var(--scl-r-sm);
+	}
+
+	.scl .scl-tm__name {
+		font-size: 1.0625em;
+	}
+
+	.scl .scl-tm__desc {
+		display: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.scl .scl-tm__card,
+	.scl .scl-tm__media-in,
+	.scl .scl-tm__name,
+	.scl .scl-tm__desc,
+	.scl .scl-tm__apply,
+	.scl .scl-tm__apply svg {
+		transition: none;
+	}
+
+	.scl .scl-tm__card:hover {
+		translate: none;
+	}
+}
+
+.scl button.scl-tm__apply {
+	width: 100%;
+}

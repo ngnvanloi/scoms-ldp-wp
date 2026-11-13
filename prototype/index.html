@@ -4,22 +4,33 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="robots" content="noindex, nofollow">
-	<title>SCOMS Landing - Prototype</title>
+	<meta name="description" content="Tìm kiếm Cộng tác viên T11/2026 - S Communications.">
+	<title>SCOMS - Tìm kiếm CTV T11/2026</title>
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap">
-
+	<link rel="icon" href="data:,">
+	<link rel="preload" href="../plugin/scoms-landing/assets/fonts/be-vietnam-pro-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="../plugin/scoms-landing/assets/fonts/be-vietnam-pro-800-vietnamese.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="stylesheet" href="dev/mock-site.css">
-
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/fonts.css">
 	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/base.css">
-	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/hero.css">
-	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/agenda.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/site-header.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/recruit-hero.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/flipclock.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/about.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/timeline.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/highlights.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/teams.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/modal.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/steps.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/notes.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/faq.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/stories.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/news.css">
+	<link rel="stylesheet" href="../plugin/scoms-landing/assets/css/site-footer.css">
 
 	<script>
 		(function () {
 			if (!new URLSearchParams(location.search).has('theme')) return;
-			document.documentElement.classList.add('is-theme-sim');
 			var link = document.createElement('link');
 			link.rel = 'stylesheet';
 			link.href = 'dev/theme-sim.css';
@@ -31,73 +42,305 @@
 	</script>
 </head>
 <body>
-	<header class="mock-header">
-		<span class="mock-header__logo">SCOMS</span>
-		<span class="mock-header__note">Header của theme (giả lập)</span>
-		<nav class="mock-header__nav">
-			<a href="./">CSS sạch</a>
-			<a href="./?theme">Giả lập CSS theme</a>
-		</nav>
+	<header class="scl scl-hd" data-scl-header>
+		<div class="scl-container scl-hd__bar">
+			<a class="scl-hd__logo" href="#top"><span class="scl-ph" data-ph="Logo 136 x 40"></span><span class="scl-sr-only">S Communications</span></a>
+			<nav class="scl-hd__nav" id="scl-hd-nav" aria-label="Điều hướng chính"><ul class="scl-hd__links"><li><a class="scl-hd__link" href="#gioi-thieu">Giới thiệu</a></li><li><a class="scl-hd__link" href="#timeline">Timeline</a></li><li><a class="scl-hd__link" href="#bo-phan">Bộ phận/Ekip</a></li><li><a class="scl-hd__link" href="#ung-tuyen">Hướng dẫn</a></li><li><a class="scl-hd__link" href="#faq">FAQs</a></li><li><a class="scl-hd__link" href="#bang-tin">Bảng tin</a></li></ul></nav>
+			<a class="scl-btn scl-hd__cta" href="#ung-tuyen"><span class="scl-btn__clip"><span data-text="Tham gia ngay">Tham gia ngay</span></span></a>
+			<button class="scl-hd__toggle" type="button" aria-expanded="false" aria-controls="scl-hd-nav"><span class="scl-hd__toggle-line"></span><span class="scl-hd__toggle-line"></span><span class="scl-sr-only">Mở menu</span></button>
+		</div>
 	</header>
 
 	<main>
-		<section class="scl scl-hero">
-			<img class="scl-hero__bg" src="images/hero.svg" alt="" fetchpriority="high">
-			<div class="scl-container">
-				<div class="scl-hero__content">
-					<p class="scl-hero__meta">20.12.2026 - GEM Center, TP.HCM</p>
-					<h1 class="scl-hero__title">Brand Experience Day 2026</h1>
-					<p class="scl-hero__desc">Một ngày gặp gỡ các thương hiệu, agency và nhà sáng tạo nội dung hàng đầu.</p>
-					<div class="scl-countdown" data-scl-countdown="2026-12-20T09:00:00+07:00" role="timer" aria-label="Thời gian còn lại đến sự kiện">
-						<div class="scl-countdown__units">
-							<div class="scl-countdown__unit"><span class="scl-countdown__num" data-unit="days">00</span><span class="scl-countdown__label">Ngày</span></div>
-							<div class="scl-countdown__unit"><span class="scl-countdown__num" data-unit="hours">00</span><span class="scl-countdown__label">Giờ</span></div>
-							<div class="scl-countdown__unit"><span class="scl-countdown__num" data-unit="minutes">00</span><span class="scl-countdown__label">Phút</span></div>
-							<div class="scl-countdown__unit"><span class="scl-countdown__num" data-unit="seconds">00</span><span class="scl-countdown__label">Giây</span></div>
-						</div>
-						<p class="scl-countdown__done" hidden>Sự kiện đã bắt đầu</p>
-					</div>
-					<a class="scl-hero__btn" href="#chuong-trinh">Xem chương trình</a>
+		<section class="scl scl-rh" id="top" data-scl-motion>
+			<div class="scl-container scl-rh__inner">
+				<div class="scl-rh__kv scl-ph scl-ph--warm" data-ph="Key visual 2048 x 878" role="img" aria-label="Bộ nhận diện chương trình (ảnh minh hoạ)"></div>
+				<p class="scl-rh__eyebrow">Lorem ipsum dolor sit amet</p>
+				<h1 class="scl-rh__title"><span class="scl-line"><span>Tìm kiếm CTV <em>T11/2026</em></span></span></h1>
+				<p class="scl-rh__lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</p>
+				<div class="scl-rh__cta">
+					<a class="scl-btn" href="#ung-tuyen"><span class="scl-btn__clip"><span data-text="Tham gia ngay">Tham gia ngay</span></span></a>
+					<p class="scl-rh__date"><span class="scl-sr-only">Vòng đơn từ</span>21/11 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="scl-sr-only">đến</span> 28/11</p>
+				</div>
+				<div class="scl-flip scl-rh__clock" data-scl-flipclock="2026-11-30T23:59:00+07:00" role="timer" aria-label="Thời gian còn lại đến hạn chót nộp đơn 23:59 ngày 30/11/2026">
+					<p class="scl-flip__caption">Hạn chót nộp đơn <strong>23:59, 30/11/2026</strong></p>
+					<div class="scl-flip__row" aria-hidden="true"><div class="scl-flip__group"><div class="scl-flip__tile" data-flip-unit="days"><span class="scl-flip__plate scl-flip__plate--top"></span><span class="scl-flip__plate scl-flip__plate--bottom"></span><span class="scl-flip__digits"><span class="scl-flip__num">00</span></span></div><span class="scl-flip__label">Ngày</span></div><div class="scl-flip__group"><div class="scl-flip__tile" data-flip-unit="hours"><span class="scl-flip__plate scl-flip__plate--top"></span><span class="scl-flip__plate scl-flip__plate--bottom"></span><span class="scl-flip__digits"><span class="scl-flip__num">00</span></span></div><span class="scl-flip__label">Giờ</span></div><div class="scl-flip__group"><div class="scl-flip__tile" data-flip-unit="minutes"><span class="scl-flip__plate scl-flip__plate--top"></span><span class="scl-flip__plate scl-flip__plate--bottom"></span><span class="scl-flip__digits"><span class="scl-flip__num">00</span></span></div><span class="scl-flip__label">Phút</span></div><div class="scl-flip__group"><div class="scl-flip__tile" data-flip-unit="seconds"><span class="scl-flip__plate scl-flip__plate--top"></span><span class="scl-flip__plate scl-flip__plate--bottom"></span><span class="scl-flip__digits"><span class="scl-flip__num">00</span></span></div><span class="scl-flip__label">Giây</span></div></div>
+					<p class="scl-flip__done" hidden>Đã hết hạn nộp đơn</p>
 				</div>
 			</div>
 		</section>
-		<section class="scl scl-agenda" id="chuong-trinh">
-			<div class="scl-container scl-container--narrow">
-				<h2 class="scl-agenda__heading">Chương trình</h2>
-				<ol class="scl-agenda__list">
-					<li class="scl-agenda__item">
-						<span class="scl-agenda__time">08:30</span>
-						<div><p class="scl-agenda__title">Đón khách và check-in</p></div>
-					</li>
-					<li class="scl-agenda__item">
-						<span class="scl-agenda__time">09:00</span>
-						<div>
-							<p class="scl-agenda__title">Khai mạc</p>
-							<p class="scl-agenda__speaker">Ban tổ chức</p>
-						</div>
-					</li>
-					<li class="scl-agenda__item">
-						<span class="scl-agenda__time">09:30</span>
-						<div>
-							<p class="scl-agenda__title">Keynote: Thương hiệu trong kỷ nguyên AI</p>
-							<p class="scl-agenda__speaker">Diễn giả khách mời</p>
-						</div>
-					</li>
-					<li class="scl-agenda__item">
-						<span class="scl-agenda__time">11:00</span>
-						<div><p class="scl-agenda__title">Thảo luận nhóm</p></div>
-					</li>
-					<li class="scl-agenda__item">
-						<span class="scl-agenda__time">12:00</span>
-						<div><p class="scl-agenda__title">Networking lunch</p></div>
-					</li>
+
+		<section class="scl scl-ab scl-defer" id="ve-scoms" data-scl-motion>
+			<div class="scl-container">
+				<h2 class="scl-title scl-title--red scl-ab__title" style="margin-inline: auto;" data-scl-reveal="title"><span class="scl-line"><span>We are SCOMS</span></span></h2>
+				<figure class="scl-ab__logo" data-scl-reveal="pop" style="--i:2">
+					<div class="scl-ab__badge scl-ph scl-ph--red" data-ph="Logo 800 x 500 (16:10)" role="img" aria-label="Logo S Communications"></div>
+					<figcaption class="scl-ab__word">Communications</figcaption>
+				</figure>
+				<p class="scl-ab__text" data-scl-reveal style="--i:3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</p>
+				<ul class="scl-ab__brands" aria-label="Các kênh của SCOMS">
+					<li class="scl-ab__brand" data-scl-reveal style="--i:0"><div class="scl-ph" data-ph="Logo 400 x 400" role="img" aria-label="STV"></div></li>
+					<li class="scl-ab__brand" data-scl-reveal style="--i:1"><div class="scl-ph" data-ph="Logo 400 x 400" role="img" aria-label="S Radio"></div></li>
+					<li class="scl-ab__brand" data-scl-reveal style="--i:2"><div class="scl-ph" data-ph="Logo 400 x 400" role="img" aria-label="UEH Enter"></div></li>
+					<li class="scl-ab__brand" data-scl-reveal style="--i:3"><div class="scl-ph" data-ph="Logo 400 x 400" role="img" aria-label="The S Magazine"></div></li>
+					<li class="scl-ab__brand" data-scl-reveal style="--i:4"><div class="scl-ph" data-ph="Logo 400 x 400" role="img" aria-label="Logo kênh 5"></div></li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="scl scl-tl scl-defer" id="timeline" data-scl-motion>
+			<div class="scl-container">
+				<div class="scl-head">
+					<h2 class="scl-title" data-scl-reveal="title"><span class="scl-line"><span>Timeline chương trình</span></span></h2>
+				</div>
+				<ol class="scl-tl__list" data-scl-progress>
+					<li class="scl-tl__item" data-scl-step data-scl-reveal><span class="scl-tl__dot" aria-hidden="true"></span><div class="scl-tl__card"><p class="scl-tl__label">Vòng đơn</p><div class="scl-tl__body"><p class="scl-tl__date">21/11 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-label="đến"><path d="M5 12h14M13 6l6 6-6 6"/></svg> 28/11</p><p class="scl-tl__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></div></div></li>
+					<li class="scl-tl__item" data-scl-step data-scl-reveal><span class="scl-tl__dot" aria-hidden="true"></span><div class="scl-tl__card"><p class="scl-tl__label">Introduction Day</p><div class="scl-tl__body"><p class="scl-tl__date">28/11</p><p class="scl-tl__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></div></div></li>
+					<li class="scl-tl__item" data-scl-step data-scl-reveal><span class="scl-tl__dot" aria-hidden="true"></span><div class="scl-tl__card"><p class="scl-tl__label">Teamwork</p><div class="scl-tl__body"><p class="scl-tl__date">06/12</p><p class="scl-tl__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></div></div></li>
+					<li class="scl-tl__item" data-scl-step data-scl-reveal><span class="scl-tl__dot" aria-hidden="true"></span><div class="scl-tl__card"><p class="scl-tl__label">Phỏng vấn</p><div class="scl-tl__body"><p class="scl-tl__date">13/12</p><p class="scl-tl__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></div></div></li>
 				</ol>
+			</div>
+		</section>
+
+		<section class="scl scl-hl scl-defer" id="gioi-thieu" data-scl-motion>
+			<div class="scl-container">
+				<div class="scl-head">
+					<h2 class="scl-title" data-scl-reveal="title"><span class="scl-line"><span>Giới thiệu chung</span></span></h2>
+				</div>
+				<div class="scl-hl__panels" data-scl-panels data-scl-reveal>
+					<article class="scl-hl__panel is-active" data-scl-panel>
+						<button class="scl-hl__tab" type="button" data-scl-panel-tab aria-expanded="true" aria-controls="scl-hl-1"><span class="scl-hl__num">01</span><span class="scl-hl__label">Tổng quan</span></button>
+						<div class="scl-hl__body" id="scl-hl-1">
+							<div class="scl-hl__media scl-ph scl-ph--warm" data-ph="Ảnh 1080 x 720 (3:2)"></div>
+							<div class="scl-hl__caption"><h3>Tổng quan</h3><p>Tìm kiếm Cộng tác viên là chương trình thường niên nhằm tìm kiếm những bạn trẻ yêu thích truyền thông, đồng thời tạo cơ hội trải nghiệm trong môi trường chuyên nghiệp và cùng lan tỏa những giá trị tích cực.</p></div>
+						</div>
+					</article>
+					<article class="scl-hl__panel" data-scl-panel>
+						<button class="scl-hl__tab" type="button" data-scl-panel-tab aria-expanded="false" aria-controls="scl-hl-2"><span class="scl-hl__num">02</span><span class="scl-hl__label">S-Search 2026</span></button>
+						<div class="scl-hl__body" id="scl-hl-2">
+							<div class="scl-hl__media scl-ph scl-ph--warm" data-ph="Ảnh 1080 x 720 (3:2)"></div>
+							<div class="scl-hl__caption"><h3>S-Search 2026</h3><p>Chương trình Tìm kiếm Cộng tác viên của Scoms đã chính thức trở lại, mang đến cơ hội để bạn gặp gỡ những người đồng hành mới, thử sức trong những trải nghiệm mới và khám phá những khía cạnh khác của bản thân. Cùng Scoms bước qua từng chặng đường, tự tin thể hiện màu sắc riêng và viết nên hành trình của chính bạn nhé!</p></div>
+						</div>
+					</article>
+					<article class="scl-hl__panel" data-scl-panel>
+						<button class="scl-hl__tab" type="button" data-scl-panel-tab aria-expanded="false" aria-controls="scl-hl-3"><span class="scl-hl__num">03</span><span class="scl-hl__label">Introduction Day</span></button>
+						<div class="scl-hl__body" id="scl-hl-3">
+							<div class="scl-hl__media scl-ph scl-ph--warm" data-ph="Ảnh 1080 x 720 (3:2)"></div>
+							<div class="scl-hl__caption"><h3>Introduction Day</h3><p>Introduction Day là hoạt động thuộc khuôn khổ Chương trình Tìm kiếm Cộng tác viên Tháng 11/2026, giúp sinh viên khám phá về Scoms, từ hoạt động, giá trị đến văn hóa của Nhóm.</p><p>Đây cũng là dịp để bạn khám phá những "bí mật" tại ngôi nhà S Đỏ qua chia sẻ từ các Scoms-ers kỳ cựu, đồng thời được giải đáp mọi thắc mắc trực tiếp cùng Ban Điều hành nhiệm kỳ XXV!</p></div>
+						</div>
+					</article>
+					<article class="scl-hl__panel" data-scl-panel>
+						<button class="scl-hl__tab" type="button" data-scl-panel-tab aria-expanded="false" aria-controls="scl-hl-4"><span class="scl-hl__num">04</span><span class="scl-hl__label">CTA</span></button>
+						<div class="scl-hl__body" id="scl-hl-4">
+							<div class="scl-hl__media scl-ph scl-ph--warm" data-ph="Ảnh 1080 x 720 (3:2)"></div>
+							<div class="scl-hl__caption"><h3>CTA</h3><p>Chúng mình đã sẵn sàng chào đón và đồng hành cùng bạn trên hành trình đầy trải nghiệm này rồi đó!</p><p>Nhanh tay đăng ký thôi, tụi mình rất mong chờ được gặp mấy bạn đó!</p><a class="scl-btn" href="#ung-tuyen"><span class="scl-btn__clip"><span data-text="Tham gia ngay">Tham gia ngay</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="scl scl-tm scl-defer" id="bo-phan" data-scl-motion>
+			<div class="scl-container">
+				<div class="scl-head">
+					<h2 class="scl-title scl-title--red" data-scl-reveal="title"><span class="scl-line"><span>7 Bộ phận/Ekip nhà S</span></span></h2>
+					<p class="scl-lead" data-scl-reveal style="--i:2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+				</div>
+				<ul class="scl-tm__grid">
+					<li class="scl-tm__card scl-tone" data-scl-reveal style="--i:0">
+						<div class="scl-tm__media"><span class="scl-tm__num">01</span><div class="scl-tm__media-in scl-ph" data-ph="Ảnh 864 x 1080 (4:5)"></div></div>
+						<div class="scl-tm__body"><h3 class="scl-tm__name">Creative</h3><p class="scl-tm__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></div>
+						<button class="scl-tm__apply" type="button" data-scl-dialog-open="scl-team-01" aria-haspopup="dialog">Apply <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+					</li>
+					<li class="scl-tm__card scl-tone" data-scl-reveal style="--i:1">
+						<div class="scl-tm__media"><span class="scl-tm__num">02</span><div class="scl-tm__media-in scl-ph" data-ph="Ảnh 864 x 1080 (4:5)"></div></div>
+						<div class="scl-tm__body"><h3 class="scl-tm__name">ER</h3><p class="scl-tm__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></div>
+						<button class="scl-tm__apply" type="button" data-scl-dialog-open="scl-team-02" aria-haspopup="dialog">Apply <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+					</li>
+					<li class="scl-tm__card scl-tone" data-scl-reveal style="--i:2">
+						<div class="scl-tm__media"><span class="scl-tm__num">03</span><div class="scl-tm__media-in scl-ph" data-ph="Ảnh 864 x 1080 (4:5)"></div></div>
+						<div class="scl-tm__body"><h3 class="scl-tm__name">Event</h3><p class="scl-tm__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></div>
+						<button class="scl-tm__apply" type="button" data-scl-dialog-open="scl-team-03" aria-haspopup="dialog">Apply <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+					</li>
+					<li class="scl-tm__card scl-tone" data-scl-reveal style="--i:3">
+						<div class="scl-tm__media"><span class="scl-tm__num">04</span><div class="scl-tm__media-in scl-ph" data-ph="Ảnh 864 x 1080 (4:5)"></div></div>
+						<div class="scl-tm__body"><h3 class="scl-tm__name">HR</h3><p class="scl-tm__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></div>
+						<button class="scl-tm__apply" type="button" data-scl-dialog-open="scl-team-04" aria-haspopup="dialog">Apply <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+					</li>
+					<li class="scl-tm__card scl-tone" data-scl-reveal style="--i:4">
+						<div class="scl-tm__media"><span class="scl-tm__num">05</span><div class="scl-tm__media-in scl-ph" data-ph="Ảnh 864 x 1080 (4:5)"></div></div>
+						<div class="scl-tm__body"><h3 class="scl-tm__name">Radio</h3><p class="scl-tm__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></div>
+						<button class="scl-tm__apply" type="button" data-scl-dialog-open="scl-team-05" aria-haspopup="dialog">Apply <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+					</li>
+					<li class="scl-tm__card scl-tone" data-scl-reveal style="--i:5">
+						<div class="scl-tm__media"><span class="scl-tm__num">06</span><div class="scl-tm__media-in scl-ph" data-ph="Ảnh 864 x 1080 (4:5)"></div></div>
+						<div class="scl-tm__body"><h3 class="scl-tm__name">STV</h3><p class="scl-tm__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></div>
+						<button class="scl-tm__apply" type="button" data-scl-dialog-open="scl-team-06" aria-haspopup="dialog">Apply <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+					</li>
+					<li class="scl-tm__card scl-tone" data-scl-reveal style="--i:6">
+						<div class="scl-tm__media"><span class="scl-tm__num">07</span><div class="scl-tm__media-in scl-ph" data-ph="Ảnh 864 x 1080 (4:5)"></div></div>
+						<div class="scl-tm__body"><h3 class="scl-tm__name">Writer</h3><p class="scl-tm__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p></div>
+						<button class="scl-tm__apply" type="button" data-scl-dialog-open="scl-team-07" aria-haspopup="dialog">Apply <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+					</li>
+				</ul>
+				<dialog class="scl-modal" id="scl-team-01" aria-labelledby="scl-team-01-title">
+					<div class="scl-modal__panel">
+						<button class="scl-modal__close" type="button" data-scl-dialog-close aria-label="Đóng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+						<header class="scl-modal__head"><h2 class="scl-modal__title" id="scl-team-01-title">Bộ phận Creative</h2></header>
+						<div class="scl-modal__body"><div class="scl-modal__role"><h3 class="scl-modal__role-title">1. Designer</h3><div class="scl-modal__group"><h4>a. Bạn sẽ làm gì?</h4><ul><li>Đảm nhận thiết kế các hình ảnh truyền thông, hình ảnh in ấn các chương trình sự kiện truyền thông Nhóm.</li></ul></div><div class="scl-modal__group"><h4>b. Điểm cộng cho bạn nếu</h4><ul><li>Có kiến thức cơ bản về các phần mềm đồ họa (Photoshop, Illustrator, Canva,...).</li><li>Yêu thích công việc thiết kế hình ảnh và có tinh thần cầu tiến, ham học hỏi.</li><li>Có khả năng tự tìm kiếm cảm hứng thiết kế.</li><li>Có sự kiên nhẫn, khả năng thích nghi cao, nền tảng tư duy thẩm mỹ tốt và đa dạng.</li><li>Có kinh nghiệm thiết kế; hiểu biết cơ bản về nhiếp ảnh và biết chụp ảnh là một lợi thế.</li></ul></div></div><div class="scl-modal__role"><h3 class="scl-modal__role-title">2. Photographer</h3><div class="scl-modal__group"><h4>a. Bạn sẽ làm gì?</h4><ul><li>Đảm nhận công việc chụp ảnh truyền thông, sự kiện trong và ngoài Nhóm.</li><li>Đảm nhận thiết kế hỗ trợ các hình ảnh truyền thông của Nhóm.</li></ul></div><div class="scl-modal__group"><h4>b. Điểm cộng cho bạn nếu</h4><ul><li>Yêu thích công việc nhiếp ảnh, có tinh thần cầu tiến và ham học hỏi.</li><li>Có khả năng research concept, dáng chụp và góc máy chụp.</li><li>Có sự kiên nhẫn, khả năng thích nghi cao, nền tảng tư duy thẩm mỹ tốt và đa dạng.</li><li>Có kinh nghiệm chụp ảnh sự kiện và chụp ảnh studio là một lợi thế.</li><li>Có máy ảnh là lợi thế, đồng thời có hiểu biết nền tảng về kỹ thuật chụp và hậu kỳ ảnh.</li><li>Có mong muốn học hỏi về thiết kế là một lợi thế.</li></ul></div></div></div>
+						<footer class="scl-modal__foot"><a class="scl-btn" href="#ung-tuyen" data-scl-dialog-close><span class="scl-btn__clip"><span data-text="Ứng tuyển ngay">Ứng tuyển ngay</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></footer>
+					</div>
+				</dialog>
+				<dialog class="scl-modal" id="scl-team-02" aria-labelledby="scl-team-02-title">
+					<div class="scl-modal__panel">
+						<button class="scl-modal__close" type="button" data-scl-dialog-close aria-label="Đóng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+						<header class="scl-modal__head"><h2 class="scl-modal__title" id="scl-team-02-title">Bộ phận ER</h2></header>
+						<div class="scl-modal__body"><div class="scl-modal__role"><h3 class="scl-modal__role-title">1. Truyền thông</h3><div class="scl-modal__group"><h4>a. Bạn sẽ làm gì?</h4><ul><li>Đảm nhận vị trí chuyên môn về mảng Truyền thông.</li><li>Xây dựng và thực thi kế hoạch Truyền thông (Online/Offline/PR) cho các chương trình/Dự án Nhóm.</li><li>Lên ý tưởng và sản xuất nội dung truyền thông đa nền tảng.</li><li>Sáng tạo và nắm bắt xu hướng không ngừng để nâng cao hiệu quả các hoạt động truyền thông.</li></ul></div><div class="scl-modal__group"><h4>b. Điểm cộng cho bạn nếu</h4><ul><li>Mong muốn tìm hiểu về truyền thông và các hoạt động truyền thông.</li><li>Có trách nhiệm, cẩn thận và chủ động trong công việc.</li><li>Làm việc có kế hoạch và có tư duy chiến lược.</li><li>Năng động, tích cực và đang tìm kiếm một môi trường có thể thỏa sức sáng tạo.</li><li>Nhạy bén với những xu hướng mới.</li><li>Có tư duy thẩm mỹ về hình ảnh và video.</li><li>Biết thiết kế, quay dựng là điểm cộng.</li><li>Không ngại dấn thân trải nghiệm, học hỏi mọi khía cạnh của truyền thông.</li></ul></div></div><div class="scl-modal__role"><h3 class="scl-modal__role-title">2. Đối ngoại - Vận động tài trợ</h3><div class="scl-modal__group"><h4>a. Bạn sẽ làm gì?</h4><ul><li>Đảm nhận vị trí chuyên môn về mảng Đối Ngoại và Vận động Tài trợ.</li><li>Quản lý hòm mail, làm việc trực tiếp với CLB/Đội/Nhóm, các Doanh nghiệp và KOLs/KOCs.</li><li>Quản lý Fanpage/Instagram của S Communications với vai trò Đối ngoại.</li><li>Tạo lập, phát triển và duy trì mối quan hệ với Đối tác Truyền thông.</li><li>Tìm kiếm Nhà Tài trợ, xây dựng các gói Tài trợ, quản lý mối quan hệ với các Doanh nghiệp cho các Chương trình/Dự án Nhóm.</li></ul></div><div class="scl-modal__group"><h4>b. Điểm cộng cho bạn nếu</h4><ul><li>Tự tin, khả năng giao tiếp tốt.</li><li>Có trách nhiệm, cẩn thận và chủ động trong công việc.</li><li>Quản lý tốt thời gian để hỗ trợ đối tác, nhà tài trợ nếu có vấn đề cần trao đổi.</li><li>Có khả năng tư duy và giải quyết vấn đề.</li><li>Cởi mở, mạnh dạn trình bày quan điểm cá nhân và khả năng thuyết phục tốt.</li><li>Mong muốn phát triển về mảng Tài trợ, Đối ngoại và cùng S Communications tạo mối quan hệ tốt đẹp, lâu dài với các CLB/Đội/Nhóm, tổ chức, Doanh nghiệp.</li></ul></div></div></div>
+						<footer class="scl-modal__foot"><a class="scl-btn" href="#ung-tuyen" data-scl-dialog-close><span class="scl-btn__clip"><span data-text="Ứng tuyển ngay">Ứng tuyển ngay</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></footer>
+					</div>
+				</dialog>
+				<dialog class="scl-modal" id="scl-team-03" aria-labelledby="scl-team-03-title">
+					<div class="scl-modal__panel">
+						<button class="scl-modal__close" type="button" data-scl-dialog-close aria-label="Đóng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+						<header class="scl-modal__head"><h2 class="scl-modal__title" id="scl-team-03-title">Bộ phận Event</h2></header>
+						<div class="scl-modal__body"><div class="scl-modal__group"><h3>1. Bạn sẽ làm gì?</h3><ul><li>Tổ chức Sự kiện cho các Chương trình/Dự án cấp Bộ phận, Nhóm ở các mảng: Nội dung sự kiện, Hậu cần và Setup.</li><li>Tham gia lên kế hoạch, tổ chức các Chương trình/Dự án cấp Nhóm.</li><li>Là nhân sự hoạt náo cho các Chương trình cấp Nhóm.</li></ul></div><div class="scl-modal__group"><h3>2. Điểm cộng cho bạn nếu</h3><ul><li>Thái độ lạc quan, tư duy tích cực, lăn xả, không ngại khó.</li><li>Trách nhiệm, hết mình với công việc.</li><li>Có tinh thần ham học hỏi.</li><li>Hòa đồng, biết quan tâm, hỗ trợ mọi người.</li><li>Linh hoạt, khéo léo, có khả năng ứng biến tốt.</li><li>Có niềm yêu thích và định hướng tương lai liên quan đến Sự kiện là một lợi thế.</li><li>Có các kỹ năng, kinh nghiệm về các mảng Nội dung sự kiện/ Setup/ Hậu cần là một lợi thế.</li></ul></div></div>
+						<footer class="scl-modal__foot"><a class="scl-btn" href="#ung-tuyen" data-scl-dialog-close><span class="scl-btn__clip"><span data-text="Ứng tuyển ngay">Ứng tuyển ngay</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></footer>
+					</div>
+				</dialog>
+				<dialog class="scl-modal" id="scl-team-04" aria-labelledby="scl-team-04-title">
+					<div class="scl-modal__panel">
+						<button class="scl-modal__close" type="button" data-scl-dialog-close aria-label="Đóng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+						<header class="scl-modal__head"><h2 class="scl-modal__title" id="scl-team-04-title">Bộ phận HR</h2></header>
+						<div class="scl-modal__body"><div class="scl-modal__role"><h3 class="scl-modal__role-title">1. Truyền thông nội bộ</h3><div class="scl-modal__group"><h4>a. Bạn sẽ làm gì?</h4><ul><li>Quản lý, xây dựng và phát triển nội dung trên các kênh Truyền thông Nội bộ Nhóm.</li><li>Thực hiện các bài viết/chuỗi bài viết cho hoạt động ghi nhận, đánh giá lộ trình phát triển nhân sự.</li><li>Đề xuất các hoạt động gắn kết nội bộ qua các cuộc họp định kỳ của Nhóm.</li></ul></div><div class="scl-modal__group"><h4>b. Điểm cộng cho bạn nếu</h4><ul><li>Có khả năng thiết kế, edit video, kinh nghiệm tổ chức event nội bộ.</li><li>Có hiểu biết cơ bản và yêu thích lĩnh vực HR ở mảng Employer Branding.</li><li>Có tư duy sáng tạo và khả năng viết cơ bản.</li><li>Yêu thích làm việc, kết nối với con người và có tinh thần quan tâm đến người khác.</li><li>Chủ động, có trách nhiệm, cẩn thận, chỉn chu, tinh thần cầu tiến trong công việc.</li><li>Có tinh thần lăn xả, hết mình trong công việc.</li></ul></div></div><div class="scl-modal__role"><h3 class="scl-modal__role-title">2. Quản lý &amp; Phát triển nhân sự</h3><div class="scl-modal__group"><h4>a. Bạn sẽ làm gì?</h4><ul><li>Nghiên cứu, xây dựng và hoàn thiện các công cụ/quy trình đánh giá, theo dõi và định hướng lộ trình phát triển nhân sự Nhóm.</li><li>Thực hiện các bài viết/chuỗi bài viết cho hoạt động ghi nhận, đánh giá lộ trình phát triển nhân sự.</li><li>Tổ chức các buổi training/sharing cấp Nhóm và cấp Bộ phận.</li><li>Quản lý tình hình và các vật dụng nhân sự Nhóm (áo, dây đeo thẻ, thẻ và các vật dụng khác của Nhóm).</li><li>Lên kế hoạch và tổ chức dự án S Alumni (Cựu thành viên) nhằm giữ lửa kết nối và trở thành cầu nối thông tin giữa Nhóm và anh chị cựu.</li><li>Thực hiện lưu trữ report và đề xuất hướng phát triển cho các hoạt động nội bộ của Bộ phận HR.</li></ul></div><div class="scl-modal__group"><h4>b. Điểm cộng cho bạn nếu</h4><ul><li>Có yêu thích về lĩnh vực HR ở mảng L&amp;D.</li><li>Có hiểu biết cơ bản và yêu thích truyền thông.</li><li>Sử dụng thành thạo các công cụ tin học văn phòng (Word, PowerPoint), đặc biệt là Excel/Google Sheets để quản lý dữ liệu.</li><li>Có trách nhiệm, cẩn thận, chỉn chu, tinh thần cầu tiến trong công việc.</li><li>Có tư duy phân tích, sắp xếp tài liệu, hoạch định công việc.</li><li>Chủ động, lễ phép, ham học hỏi, kết nối với con người và có tinh thần quan tâm đến người khác.</li><li>Có tinh thần lăn xả, hết mình trong công việc.</li></ul></div></div></div>
+						<footer class="scl-modal__foot"><a class="scl-btn" href="#ung-tuyen" data-scl-dialog-close><span class="scl-btn__clip"><span data-text="Ứng tuyển ngay">Ứng tuyển ngay</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></footer>
+					</div>
+				</dialog>
+				<dialog class="scl-modal" id="scl-team-05" aria-labelledby="scl-team-05-title">
+					<div class="scl-modal__panel">
+						<button class="scl-modal__close" type="button" data-scl-dialog-close aria-label="Đóng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+						<header class="scl-modal__head"><h2 class="scl-modal__title" id="scl-team-05-title">Ekip Radio</h2></header>
+						<div class="scl-modal__body"><div class="scl-modal__role"><h3 class="scl-modal__role-title">1. MC</h3><div class="scl-modal__group"><h4>a. Bạn sẽ làm gì?</h4><ul><li>Cùng team lên ý tưởng, xây dựng kế hoạch truyền thông cho các sản phẩm và chương trình của Ekip Radio.</li><li>Tham gia thu âm cho các bài chuyên mục, sản phẩm thương hiệu S Radio và S Communications.</li><li>Đảm nhận vị trí MC/Host cho các sản phẩm Podcast, Talk Series và các chương trình, dự án của Ekip và Nhóm.</li><li>Phối hợp với biên tập, kỹ thuật để đảm bảo sản phẩm đạt chất lượng tốt về nội dung và cảm xúc.</li><li>Ngoài chuyên môn MC, được tạo điều kiện để phát triển bản thân và kỹ năng ở các vị trí khác liên quan đến truyền thông thuộc gói công việc của Ekip hoặc Nhóm.</li></ul></div><div class="scl-modal__group"><h4>b. Điểm cộng cho bạn nếu</h4><ul><li>Yêu thích và có mong muốn phát triển trong lĩnh vực MC thu âm và MC sân khấu.</li><li>Phát âm chuẩn, lưu loát, khéo léo, có khả năng ứng biến và xử lý tình huống tốt.</li><li>Có hiểu biết cơ bản về podcast, video podcast.</li><li>Có kinh nghiệm thu âm/MC hoặc biết sử dụng cơ bản phần mềm chỉnh sửa âm thanh, video là một lợi thế.</li><li>Có niềm yêu thích với truyền thông.</li><li>Có khả năng teamwork, tinh thần trách nhiệm cao, ham học hỏi và chịu được áp lực.</li><li>Thái độ lạc quan, tư duy tích cực, chủ động trong công việc, có khả năng quản lý công việc và thời gian.</li></ul></div></div><div class="scl-modal__role"><h3 class="scl-modal__role-title">2. Biên tập</h3><div class="scl-modal__group"><h4>a. Bạn sẽ làm gì?</h4><ul><li>Cùng team lên ý tưởng, xây dựng kế hoạch truyền thông cho các sản phẩm và chương trình của Ekip Radio.</li><li>Đảm nhận vị trí biên tập, viết kịch bản và xây dựng nội dung truyền thông trên Fanpage, Instagram, TikTok, Spotify, Youtube của S Radio.</li><li>Phối hợp với MC và kỹ thuật để đảm bảo nội dung nhất quán về thông điệp, giọng điệu và cảm xúc.</li><li>Ngoài chuyên môn Biên tập, được tạo điều kiện để phát triển bản thân và kỹ năng ở các vị trí khác liên quan đến truyền thông thuộc gói công việc của Ekip hoặc Nhóm.</li></ul></div><div class="scl-modal__group"><h4>b. Điểm cộng cho bạn nếu</h4><ul><li>Yêu thích với việc đọc sách, viết lách và nghe podcast.</li><li>Có tư duy sáng tạo, góc nhìn đa chiều và phong cách hành văn riêng.</li><li>Có khả năng viết đa dạng hình thức, thể loại. Nhạy bén với những xu hướng mới là một lợi thế.</li><li>Có niềm yêu thích với truyền thông.</li><li>Có khả năng teamwork, tinh thần trách nhiệm cao, ham học hỏi và chịu được áp lực.</li><li>Thái độ lạc quan, tư duy tích cực, chủ động trong công việc, có khả năng quản lý công việc và thời gian.</li></ul></div></div><div class="scl-modal__role"><h3 class="scl-modal__role-title">3. Kỹ thuật</h3><div class="scl-modal__group"><h4>a. Bạn sẽ làm gì?</h4><ul><li>Cùng team lên ý tưởng, xây dựng kế hoạch truyền thông cho các sản phẩm và chương trình của Ekip Radio.</li><li>Đảm nhận thiết kế, chỉnh sửa hình ảnh, clip, âm thanh cho các sản phẩm, chương trình, sự kiện của Ekip Radio và Nhóm.</li><li>Chịu trách nhiệm chỉnh sửa, hậu kỳ âm thanh của thương hiệu S Radio và S Communications.</li><li>Phối hợp với MC và Biên tập để hoàn thiện sản phẩm đúng tiến độ và chất lượng.</li><li>Ngoài chuyên môn Kỹ thuật, được tạo điều kiện để phát triển bản thân và kỹ năng ở các vị trí khác liên quan đến truyền thông thuộc gói công việc của Ekip hoặc Nhóm.</li></ul></div><div class="scl-modal__group"><h4>b. Điểm cộng cho bạn nếu</h4><ul><li>Có đam mê với hình ảnh, âm thanh, video và mong muốn lorem ipsum dolor sit amet.</li><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</li><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</li></ul></div></div></div>
+						<footer class="scl-modal__foot"><a class="scl-btn" href="#ung-tuyen" data-scl-dialog-close><span class="scl-btn__clip"><span data-text="Ứng tuyển ngay">Ứng tuyển ngay</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></footer>
+					</div>
+				</dialog>
+				<dialog class="scl-modal" id="scl-team-06" aria-labelledby="scl-team-06-title">
+					<div class="scl-modal__panel">
+						<button class="scl-modal__close" type="button" data-scl-dialog-close aria-label="Đóng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+						<header class="scl-modal__head"><h2 class="scl-modal__title" id="scl-team-06-title">Ekip STV</h2></header>
+						<div class="scl-modal__body"><div class="scl-modal__role"><h3 class="scl-modal__role-title">1. Sáng tạo nội dung</h3><div class="scl-modal__group"><h4>a. Bạn sẽ làm gì?</h4><ul><li>Cùng team lên ý tưởng sáng tạo độc đáo, phát triển Concept chủ đạo cho các dự án (MV, Phim ngắn, Photo story, Chiến dịch...).</li><li>Viết kịch bản chi tiết (Kịch bản văn học, Kịch bản phân cảnh, Storyboard cơ bản) và nội dung truyền thông đa kênh.</li><li>Xây dựng và quản lý Timeline kế hoạch truyền thông chi tiết, đảm bảo sự đồng bộ về thông điệp.</li><li>Cơ hội trải nghiệm chuyên sâu: Đạo diễn (hướng dẫn diễn xuất), Sản xuất (quản lý flow nội dung), Biên kịch.</li></ul></div><div class="scl-modal__group"><h4>b. Điểm cộng cho bạn nếu</h4><ul><li>Tư duy Sáng tạo đột phá và khả năng kể chuyện/diễn đạt bằng ngôn ngữ tốt.</li><li>Kỹ năng viết lách đa dạng phong cách (chính luận, giải trí, truyền cảm hứng).</li><li>Am hiểu tâm lý khán giả mục tiêu và các xu hướng nội dung Media.</li><li>Khả năng làm việc độc lập và chịu được áp lực deadline cao.</li></ul></div></div><div class="scl-modal__role"><h3 class="scl-modal__role-title">2. Kỹ thuật quay dựng</h3><div class="scl-modal__group"><h4>a. Bạn sẽ làm gì?</h4><ul><li>Cùng team phân tích kịch bản, đề xuất giải pháp kỹ thuật Quay và Ánh sáng.</li><li>Chịu trách nhiệm Quay chính tại hiện trường, đảm bảo chất lượng hình ảnh và kỹ thuật theo concept.</li><li>Thực hiện Hậu kỳ chuyên sâu: Dựng phim, Cắt ghép, Thiết kế âm thanh cơ bản (SFX/BGM), Color Grading.</li><li>Hỗ trợ bảo quản, kiểm kê thiết bị quay dựng của Ekip.</li><li>Cơ hội trải nghiệm chuyên sâu: Giám đốc Hình ảnh (D.O.P), Đạo diễn (chỉ đạo kỹ thuật), Sản xuất (quản lý quy trình sản xuất hậu kỳ).</li></ul></div><div class="scl-modal__group"><h4>b. Điểm cộng cho bạn nếu</h4><ul><li>Thành thạo kỹ thuật Quay phim (cảm biến, khẩu độ, tốc độ, ISO, ánh sáng) và bố cục.</li><li>Sử dụng thành thạo các phần mềm Hậu kỳ chuyên nghiệp.</li><li>Có kiến thức về workflow sản xuất Media (tiền kỳ - sản xuất - hậu kỳ).</li><li>Tỉ mỉ, có trách nhiệm cao với sản phẩm cuối cùng.</li></ul></div></div><div class="scl-modal__role"><h3 class="scl-modal__role-title">3. Kỹ thuật hình ảnh</h3><div class="scl-modal__group"><h4>a. Bạn sẽ làm gì?</h4><ul><li>Cùng xây dựng ý tưởng hình ảnh trực quan và Brand Identity (nhận diện hình ảnh) cho dự án.</li><li>Thiết kế các ấn phẩm truyền thông đa nền tảng (Key Visuals, Poster, Banner, Infographic, Social Assets...).</li><li>Thiết kế Motion Graphic/Animation cơ bản (nếu có) để tăng tính thu hút.</li><li>Linh hoạt hỗ trợ Ekip trong việc chụp ảnh tư liệu/sản phẩm hoặc thiết kế/làm sạch bối cảnh.</li><li>Cơ hội trải nghiệm chuyên sâu: Đạo diễn Hình ảnh (thiết kế mỹ thuật), Sản xuất (quản lý hình ảnh tổng thể).</li></ul></div><div class="scl-modal__group"><h4>b. Điểm cộng cho bạn nếu</h4><ul><li>Thành thạo các công cụ thiết kế đồ họa (Bộ Adobe).</li><li>Thẩm mỹ hiện đại, am hiểu về xu hướng thiết kế và typography.</li><li>Có khả năng phối hợp với team Content để minh họa ý tưởng.</li><li>Kỹ năng quản lý file, thiết kế theo hệ thống.</li></ul></div></div></div>
+						<footer class="scl-modal__foot"><a class="scl-btn" href="#ung-tuyen" data-scl-dialog-close><span class="scl-btn__clip"><span data-text="Ứng tuyển ngay">Ứng tuyển ngay</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></footer>
+					</div>
+				</dialog>
+				<dialog class="scl-modal" id="scl-team-07" aria-labelledby="scl-team-07-title">
+					<div class="scl-modal__panel">
+						<button class="scl-modal__close" type="button" data-scl-dialog-close aria-label="Đóng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+						<header class="scl-modal__head"><h2 class="scl-modal__title" id="scl-team-07-title">Bộ phận Writer</h2></header>
+						<div class="scl-modal__body"><div class="scl-modal__group"><h3>1. Bạn sẽ làm gì?</h3><ul><li>Quản lý, phát triển nội dung cho Website và Fanpage UEHenter.</li><li>Thực hiện phỏng vấn, PR (làm việc với KOLs, KOCs, các Đối tác truyền thông,...), lên tin nhanh cho các bài đăng, sự kiện.</li><li>Xây dựng nội dung thương hiệu The S Magazine - Trang tạp chí điện tử hàng đầu dành cho sinh viên UEH.</li><li>Biên tập các tạp chí, tuần san, ấn phẩm độc quyền cho UEH, S Communications.</li><li>Thực thi bản mô tả (brief) hình ảnh, video cho các sản phẩm của Fanpage UEHenter và S Communications.</li><li>Hỗ trợ xây dựng nội dung cho website scommunications.org.</li><li>Phụ trách sáng tác các bài viết truyền thông hấp dẫn cho các Chương trình/Dự án đặc sắc trong và ngoài Nhóm.</li><li>Tham gia trực tiếp vào Ban tổ chức các chiến dịch truyền thông đầy sáng tạo và giá trị dành cho sinh viên, tạo nên những tác động tích cực, sâu rộng trong cộng đồng.</li></ul></div><div class="scl-modal__group"><h3>2. Điểm cộng cho bạn nếu</h3><ul><li>Khả năng viết ổn, tư duy nhạy bén, luôn cập nhật và bắt kịp các xu hướng mới nhất trên mạng xã hội và trong giới trẻ.</li><li>Yêu thích sáng tạo, truyền thông.</li><li>Tinh thần trách nhiệm cao, luôn nhiệt tình trong công việc và không ngại thử thách bản thân.</li><li>Tinh thần ham học hỏi, luôn sẵn sàng nâng cao kỹ năng, tìm kiếm cơ hội phát triển, và làm việc nhóm hiệu quả để cùng đạt mục tiêu chung.</li><li>Biết sử dụng Photoshop, Canva, Capcut,... là một lợi thế.</li></ul></div></div>
+						<footer class="scl-modal__foot"><a class="scl-btn" href="#ung-tuyen" data-scl-dialog-close><span class="scl-btn__clip"><span data-text="Ứng tuyển ngay">Ứng tuyển ngay</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></footer>
+					</div>
+				</dialog>
+			</div>
+		</section>
+
+		<section class="scl scl-st scl-defer" id="ung-tuyen" data-scl-motion>
+			<div class="scl-container">
+				<div class="scl-head">
+					<h2 class="scl-title scl-title--red" data-scl-reveal="title"><span class="scl-line"><span>Các bước đến gần hơn với Scoms</span></span></h2>
+				</div>
+				<ol class="scl-st__list">
+					<li class="scl-st__item scl-tone" data-scl-reveal style="--i:0"><h3 class="scl-st__step">Bước 1</h3><p class="scl-st__text">Đầu tiên bạn nhấn vào đường link <a href="#bo-phan">TẠI ĐÂY</a> để truy cập vào bộ đề của các Bộ phận/Ekip. (Đừng quên để ý vào đúng bộ đề của Bộ phận/Ekip mà mình apply nha)</p><span class="scl-st__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></li>
+					<li class="scl-st__item scl-tone" data-scl-reveal style="--i:2"><h3 class="scl-st__step">Bước 2</h3><p class="scl-st__text">Tiếp đến bạn ấn chuột phải và chọn <strong>"Tải xuống/Download"</strong> hoặc chọn <strong>"Tệp"</strong> và <strong>"Tạo bản sao/Duplicate"</strong> vào Google Drive của mình.</p><span class="scl-st__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></li>
+					<li class="scl-st__item scl-tone" data-scl-reveal style="--i:4"><h3 class="scl-st__step">Bước 3</h3><p class="scl-st__text">Xuất file theo định dạng <strong>pdf</strong> và nếu có dẫn link Google Drive trong bài làm thì đừng quên cấp quyền truy cập ở chế độ <strong>"Người xem/Viewer"</strong> nhé!</p><span class="scl-st__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></li>
+					<li class="scl-st__item scl-tone" data-scl-reveal style="--i:6"><h3 class="scl-st__step">Bước 4</h3><p class="scl-st__text">Cuối cùng, truy cập <a href="#ung-tuyen">TẠI ĐÂY</a> để nộp đơn và cùng bắt đầu hành trình trở thành Scoms-ers ngay. <span class="scl-st__deadline">Hạn chót nộp đơn: 23:59, 30/11/2026</span></p></li>
+				</ol>
+			</div>
+		</section>
+
+		<section class="scl scl-nt scl-defer" id="luu-y" data-scl-motion>
+			<div class="scl-container">
+				<div class="scl-nt__stage">
+					<div class="scl-nt__backdrop scl-ph scl-ph--warm" data-ph="Ảnh nền 1920 x 1080 (16:9)" aria-hidden="true"></div>
+					<div class="scl-nt__card" data-scl-reveal>
+						<h2 class="scl-nt__title">Bạn nhớ lưu ý</h2>
+						<ol class="scl-nt__list">
+							<li class="scl-nt__item"><span class="scl-nt__num" aria-hidden="true">1</span><p>Bạn có thể lựa chọn hoàn thành đơn theo form của chúng mình hoặc tự do sáng tạo theo cách riêng của bạn. Nhưng hãy chắc chắn rằng bạn vẫn đảm bảo được thông tin và trả lời đầy đủ các câu hỏi của nội dung đơn (không thiếu câu hỏi, không thay đổi thứ tự câu hỏi).</p></li>
+							<li class="scl-nt__item"><span class="scl-nt__num" aria-hidden="true">2</span><p><strong>Nếu bạn có nguyện vọng vào 1 Bộ phận/ Ekip:</strong> Bạn cần hoàn thành 1 đơn đăng ký của Bộ phận/Ekip đó trước khi hết hạn đăng ký.</p></li>
+							<li class="scl-nt__item"><span class="scl-nt__num" aria-hidden="true">3</span><p><strong>Nếu bạn có nguyện vọng vào 2 Bộ phận/Ekip:</strong> Bạn cần hoàn thành 2 đơn đăng ký của Bộ phận/Ekip đó trước khi hết hạn đăng ký.</p></li>
+							<li class="scl-nt__item"><span class="scl-nt__num" aria-hidden="true">4</span><div><p>Đơn đăng ký phải được lưu dưới dạng PDF và đặt tên đúng cú pháp:</p>
+								<div class="scl-nt__format">
+									<code>Bộ phận/Ekip đăng kí_Vị trí đăng ký_Họ và tên_Khóa</code>
+									<span>VD: <code>HR_Quản lý &amp; Phát triển Nhân sự_Nguyễn Văn A_K52</code></span>
+									<small>(Một Bộ phận/Ekip có thể có nhiều vị trí khác nhau, bạn hãy xem thật kĩ JDs để chọn đúng vị trí mong muốn nhé.)</small>
+								</div></div>
+							</li>
+							<li class="scl-nt__item scl-nt__item--key"><span class="scl-nt__num" aria-hidden="true">5</span><p><strong>Lưu ý:</strong> Mỗi bạn chỉ có thể lựa chọn tối đa 02 nguyện vọng ở 02 Bộ phận/Ekip khác nhau.</p></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="scl scl-fq scl-defer" id="faq" data-scl-motion>
+			<div class="scl-container">
+				<div class="scl-fq__panel" data-scl-reveal>
+					<h2 class="scl-title" data-scl-reveal="title"><span class="scl-line"><span>Bạn có thắc mắc gì muốn hỏi chúng mình nè?</span></span></h2>
+					<div class="scl-fq__list">
+						<details class="scl-fq__item" name="scl-faq" open><summary class="scl-fq__q"><span class="scl-fq__mark" aria-hidden="true">?</span><span class="scl-fq__q-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span><span class="scl-fq__icon" aria-hidden="true"></span></summary><p class="scl-fq__a">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</p></details>
+						<details class="scl-fq__item" name="scl-faq"><summary class="scl-fq__q"><span class="scl-fq__mark" aria-hidden="true">?</span><span class="scl-fq__q-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span><span class="scl-fq__icon" aria-hidden="true"></span></summary><p class="scl-fq__a">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</p></details>
+						<details class="scl-fq__item" name="scl-faq"><summary class="scl-fq__q"><span class="scl-fq__mark" aria-hidden="true">?</span><span class="scl-fq__q-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span><span class="scl-fq__icon" aria-hidden="true"></span></summary><p class="scl-fq__a">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</p></details>
+					</div>
+					<p class="scl-fq__note">Lorem ipsum dolor sit amet <a href="#">consectetur adipiscing</a></p>
+				</div>
+			</div>
+		</section>
+
+		<section class="scl scl-sr scl-defer" data-scl-motion>
+			<div class="scl-container">
+				<div class="scl-head">
+					<h2 class="scl-title" data-scl-reveal="title"><span class="scl-line"><span>Sharing một chút</span></span></h2>
+				</div>
+				<div class="scl-sr__grid">
+					<figure class="scl-sr__card" data-scl-reveal style="--i:0"><div class="scl-sr__photo scl-ph scl-ph--warm" data-ph="Ảnh 1080 x 1440 (3:4)"></div><figcaption class="scl-sr__who"><p class="scl-sr__name">Lorem Ipsum</p><p class="scl-sr__role">Dolor sit amet</p></figcaption><blockquote class="scl-sr__quote"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</p></blockquote></figure>
+					<figure class="scl-sr__card" data-scl-reveal style="--i:1"><div class="scl-sr__photo scl-ph scl-ph--dark" data-ph="Ảnh 1080 x 1440 (3:4)"></div><figcaption class="scl-sr__who"><p class="scl-sr__name">Lorem Ipsum</p><p class="scl-sr__role">Dolor sit amet</p></figcaption><blockquote class="scl-sr__quote"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</p></blockquote></figure>
+					<figure class="scl-sr__card" data-scl-reveal style="--i:2"><div class="scl-sr__photo scl-ph scl-ph--red" data-ph="Ảnh 1080 x 1440 (3:4)"></div><figcaption class="scl-sr__who"><p class="scl-sr__name">Lorem Ipsum</p><p class="scl-sr__role">Dolor sit amet</p></figcaption><blockquote class="scl-sr__quote"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</p></blockquote></figure>
+				</div>
+			</div>
+		</section>
+
+		<section class="scl scl-nw scl-defer" id="bang-tin" data-scl-motion>
+			<div class="scl-container">
+				<div class="scl-head">
+					<h2 class="scl-title" data-scl-reveal="title"><span class="scl-line"><span>Bảng tin</span></span></h2>
+				</div>
+				<ul class="scl-nw__grid">
+					<li class="scl-nw__card" data-scl-reveal style="--i:0"><div class="scl-nw__thumb scl-ph scl-ph--dark" data-ph="Ảnh 1200 x 825 (16:11)"></div><div class="scl-nw__tags"><span class="scl-nw__tag">Bản tin</span><span class="scl-nw__tag scl-nw__tag--alt">Kiến thức</span></div><div class="scl-nw__bottom"><span class="scl-nw__date">dd/mm/yyyy</span><h3 class="scl-nw__title"><a class="scl-nw__link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do</a></h3></div></li>
+					<li class="scl-nw__card" data-scl-reveal style="--i:1"><div class="scl-nw__thumb scl-ph scl-ph--warm" data-ph="Ảnh 1200 x 825 (16:11)"></div><div class="scl-nw__tags"><span class="scl-nw__tag">Bản tin</span></div><div class="scl-nw__bottom"><span class="scl-nw__date">dd/mm/yyyy</span><h3 class="scl-nw__title"><a class="scl-nw__link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do</a></h3></div></li>
+					<li class="scl-nw__card" data-scl-reveal style="--i:2"><div class="scl-nw__thumb scl-ph scl-ph--red" data-ph="Ảnh 1200 x 825 (16:11)"></div><div class="scl-nw__tags"><span class="scl-nw__tag">Bản tin</span><span class="scl-nw__tag scl-nw__tag--alt">Kiến thức</span></div><div class="scl-nw__bottom"><span class="scl-nw__date">dd/mm/yyyy</span><h3 class="scl-nw__title"><a class="scl-nw__link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do</a></h3></div></li>
+					<li class="scl-nw__card" data-scl-reveal style="--i:3"><div class="scl-nw__thumb scl-ph scl-ph--warm" data-ph="Ảnh 1200 x 825 (16:11)"></div><div class="scl-nw__tags"><span class="scl-nw__tag">Bản tin</span></div><div class="scl-nw__bottom"><span class="scl-nw__date">dd/mm/yyyy</span><h3 class="scl-nw__title"><a class="scl-nw__link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do</a></h3></div></li>
+					<li class="scl-nw__card" data-scl-reveal style="--i:4"><div class="scl-nw__thumb scl-ph scl-ph--dark" data-ph="Ảnh 1200 x 825 (16:11)"></div><div class="scl-nw__tags"><span class="scl-nw__tag">Bản tin</span><span class="scl-nw__tag scl-nw__tag--alt">Kiến thức</span></div><div class="scl-nw__bottom"><span class="scl-nw__date">dd/mm/yyyy</span><h3 class="scl-nw__title"><a class="scl-nw__link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do</a></h3></div></li>
+					<li class="scl-nw__card" data-scl-reveal style="--i:5"><div class="scl-nw__thumb scl-ph scl-ph--red" data-ph="Ảnh 1200 x 825 (16:11)"></div><div class="scl-nw__tags"><span class="scl-nw__tag">Bản tin</span></div><div class="scl-nw__bottom"><span class="scl-nw__date">dd/mm/yyyy</span><h3 class="scl-nw__title"><a class="scl-nw__link" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do</a></h3></div></li>
+				</ul>
+				<div class="scl-nw__more" data-scl-reveal><a class="scl-btn" href="#"><span class="scl-btn__clip"><span data-text="Xem tất cả bài viết">Xem tất cả bài viết</span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
 			</div>
 		</section>
 	</main>
 
-	<footer class="mock-footer">Footer của theme (giả lập)</footer>
+	<footer class="scl scl-ft">
+		<div class="scl-container">
+			<div class="scl-ft__grid">
+				<div class="scl-ft__brand"><div class="scl-ft__logo scl-ph" data-ph="Logo 160 x 48" role="img" aria-label="S Communications"></div><p class="scl-ft__about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.</p></div>
+				<div class="scl-ft__col"><p class="scl-ft__heading">Liên hệ</p><ul class="scl-ft__list"><li>Email: <a class="scl-ft__link" href="mailto:lorem@example.com">lorem@example.com</a></li><li>Điện thoại: 0000 000 000</li><li>Địa chỉ: Lorem ipsum dolor sit amet</li></ul></div>
+				<div class="scl-ft__col"><p class="scl-ft__heading">Kênh</p><ul class="scl-ft__list"><li><a class="scl-ft__link" href="#">STV</a></li><li><a class="scl-ft__link" href="#">S Radio</a></li><li><a class="scl-ft__link" href="#">UEH Enter</a></li><li><a class="scl-ft__link" href="#">The S Magazine</a></li></ul></div>
+				<div class="scl-ft__col"><p class="scl-ft__heading">Theo dõi</p><ul class="scl-ft__list"><li><a class="scl-ft__link" href="#">Facebook</a></li><li><a class="scl-ft__link" href="#">Instagram</a></li><li><a class="scl-ft__link" href="#">TikTok</a></li><li><a class="scl-ft__link" href="#">YouTube</a></li></ul></div>
+			</div>
+			<div class="scl-ft__bottom"><p>Copyright 2026 S Communications. Lorem ipsum dolor sit amet.</p><a class="scl-ft__top" href="#top">Lên đầu trang <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a></div>
+		</div>
+	</footer>
 
-	<script src="../plugin/scoms-landing/assets/js/countdown.js" defer></script>
+	<script src="../plugin/scoms-landing/assets/js/flipclock.js" defer></script>
+	<script src="../plugin/scoms-landing/assets/js/motion.js" defer></script>
+	<script src="../plugin/scoms-landing/assets/js/panels.js" defer></script>
+	<script src="../plugin/scoms-landing/assets/js/modal.js" defer></script>
+	<script src="../plugin/scoms-landing/assets/js/header.js" defer></script>
 </body>
 </html>

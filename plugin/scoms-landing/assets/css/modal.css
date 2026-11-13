@@ -1,0 +1,235 @@
+html:has(.scl-modal) {
+	scrollbar-gutter: stable;
+}
+
+html:has(.scl-modal[open]) {
+	overflow: hidden;
+}
+
+.scl .scl-modal {
+	width: min(640px, calc(100vw - 32px));
+	max-width: none;
+	max-height: min(86vh, 760px);
+	max-height: min(86svh, 760px);
+	margin: auto;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+	border-radius: var(--scl-r-lg);
+	background: var(--scl-white);
+	font-family: var(--scl-font);
+	font-size: 16px;
+	line-height: 1.6;
+	color: var(--scl-ink);
+	opacity: 0;
+	transform: translate3d(0, 16px, 0) scale(0.96);
+	transition:
+		opacity 220ms var(--scl-ease-in),
+		transform 220ms var(--scl-ease-in),
+		overlay 220ms allow-discrete,
+		display 220ms allow-discrete;
+}
+
+.scl .scl-modal[open] {
+	opacity: 1;
+	transform: translate3d(0, 0, 0) scale(1);
+	transition-duration: 320ms;
+	transition-timing-function: var(--scl-ease);
+	transition-delay: 50ms;
+}
+
+@starting-style {
+	.scl .scl-modal[open] {
+		opacity: 0;
+		transform: translate3d(0, 16px, 0) scale(0.96);
+	}
+}
+
+.scl .scl-modal::backdrop {
+	background: rgb(0 0 0 / 0);
+	transition:
+		background-color 200ms var(--scl-ease-in),
+		overlay 200ms allow-discrete,
+		display 200ms allow-discrete;
+}
+
+.scl .scl-modal[open]::backdrop {
+	background: rgb(0 0 0 / 0.55);
+	transition-timing-function: var(--scl-ease);
+}
+
+@starting-style {
+	.scl .scl-modal[open]::backdrop {
+		background: rgb(0 0 0 / 0);
+	}
+}
+
+.scl .scl-modal__panel {
+	position: relative;
+	display: grid;
+	grid-template-rows: auto minmax(0, 1fr) auto;
+	max-height: inherit;
+}
+
+.scl .scl-modal__head {
+	padding: clamp(24px, 4vw, 32px) 64px 12px;
+	text-align: center;
+}
+
+.scl .scl-modal__title {
+	font-size: clamp(1.5em, 4vw, 2em);
+	font-weight: 800;
+	line-height: 1.15;
+	letter-spacing: -0.01em;
+	text-transform: uppercase;
+	color: var(--scl-red);
+}
+
+.scl .scl-modal__close {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	z-index: 3;
+	display: grid;
+	place-items: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	color: var(--scl-ink-3);
+	transition: background-color 200ms var(--scl-ease), color 200ms var(--scl-ease), transform 320ms var(--scl-ease-back);
+}
+
+.scl .scl-modal__close svg {
+	width: 20px;
+	height: 20px;
+}
+
+.scl .scl-modal__close:hover,
+.scl .scl-modal__close:focus-visible {
+	background: var(--scl-cream);
+	color: var(--scl-red);
+	transform: rotate(90deg);
+	transition-duration: var(--scl-dur-q), var(--scl-dur-q), 320ms;
+}
+
+.scl .scl-modal__body {
+	display: grid;
+	gap: 20px;
+	padding: 8px clamp(20px, 4.4vw, 40px) 8px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	scrollbar-gutter: stable;
+	scrollbar-width: thin;
+	scrollbar-color: var(--scl-red-tint) transparent;
+}
+
+.scl .scl-modal__role {
+	display: grid;
+	gap: 14px;
+}
+
+.scl .scl-modal__role + .scl-modal__role {
+	padding-top: 20px;
+	border-top: 1px solid var(--scl-line);
+}
+
+.scl .scl-modal__role-title {
+	justify-self: start;
+	padding: 4px 12px;
+	border-radius: var(--scl-r-xs);
+	background: var(--scl-red);
+	font-size: 1em;
+	font-weight: 800;
+	color: var(--scl-white);
+}
+
+.scl .scl-modal__group :is(h3, h4) {
+	margin-bottom: 8px;
+	font-size: 1.0625em;
+	font-weight: 800;
+	color: var(--scl-red);
+}
+
+.scl .scl-modal__role .scl-modal__group h4 {
+	font-size: 0.9688em;
+}
+
+.scl .scl-modal__group ul {
+	display: grid;
+	gap: 6px;
+}
+
+.scl .scl-modal__group li {
+	position: relative;
+	padding-left: 20px;
+	font-size: 0.9688em;
+	line-height: 1.55;
+}
+
+.scl .scl-modal__group li::before {
+	content: "";
+	position: absolute;
+	top: 0.62em;
+	left: 4px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--scl-red);
+}
+
+.scl .scl-modal__foot {
+	display: flex;
+	justify-content: center;
+	padding: 20px clamp(20px, 4.4vw, 40px) clamp(20px, 3vw, 28px);
+	background: linear-gradient(180deg, rgb(255 255 255 / 0), var(--scl-white) 30%);
+}
+
+.scl .scl-modal[open] .scl-modal__head,
+.scl .scl-modal[open] .scl-modal__body > *,
+.scl .scl-modal[open] .scl-modal__foot {
+	animation: scl-modal-in var(--scl-dur-l) var(--scl-ease) both;
+}
+
+.scl .scl-modal[open] .scl-modal__head {
+	animation-delay: 120ms;
+}
+
+.scl .scl-modal[open] .scl-modal__body > :nth-child(1) {
+	animation-delay: 170ms;
+}
+
+.scl .scl-modal[open] .scl-modal__body > :nth-child(2) {
+	animation-delay: 220ms;
+}
+
+.scl .scl-modal[open] .scl-modal__body > :nth-child(n + 3) {
+	animation-delay: 270ms;
+}
+
+.scl .scl-modal[open] .scl-modal__foot {
+	animation-delay: 300ms;
+}
+
+@keyframes scl-modal-in {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -8px, 0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.scl .scl-modal,
+	.scl .scl-modal[open],
+	.scl .scl-modal::backdrop,
+	.scl .scl-modal__close {
+		transition: opacity 120ms linear, overlay 120ms allow-discrete, display 120ms allow-discrete;
+		transform: none;
+	}
+
+	.scl .scl-modal[open] .scl-modal__head,
+	.scl .scl-modal[open] .scl-modal__body > *,
+	.scl .scl-modal[open] .scl-modal__foot {
+		animation: none;
+	}
+}

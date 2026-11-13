@@ -1,0 +1,167 @@
+.scl .scl-flip {
+	--scl-flip-h: clamp(120px, 15vw, 170px);
+	--scl-flip-w: calc(var(--scl-flip-h) * 0.84);
+	--scl-flip-r: clamp(14px, 1.6vw, 18px);
+	--scl-flip-gap: 3px;
+	--scl-flip-bg: var(--scl-cream-2);
+	--scl-flip-fg: var(--scl-red);
+	display: grid;
+	justify-items: center;
+	gap: 16px;
+}
+
+.scl .scl-flip__caption {
+	font-size: 0.875em;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	font-variant-numeric: tabular-nums;
+	color: var(--scl-ink-2);
+}
+
+.scl .scl-flip__caption strong {
+	font-weight: 800;
+	color: var(--scl-red);
+}
+
+.scl .scl-flip__row {
+	display: flex;
+	gap: clamp(10px, 1.6vw, 18px);
+}
+
+.scl .scl-flip__tile {
+	position: relative;
+	width: var(--scl-flip-w);
+	height: var(--scl-flip-h);
+	perspective: calc(var(--scl-flip-h) * 6);
+}
+
+.scl .scl-flip__plate {
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: calc(50% - var(--scl-flip-gap) / 2);
+	border-radius: var(--scl-flip-r);
+	background: var(--scl-flip-bg);
+}
+
+.scl .scl-flip__plate--top {
+	top: 0;
+	transform-origin: 50% 100%;
+}
+
+.scl .scl-flip__plate--bottom {
+	bottom: 0;
+}
+
+.scl .scl-flip__group {
+	display: grid;
+	justify-items: center;
+	gap: 10px;
+}
+
+.scl .scl-flip__label {
+	font-size: 0.75em;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--scl-ink-2);
+}
+
+.scl .scl-flip__digits {
+	position: absolute;
+	inset: 0;
+	z-index: 3;
+	display: grid;
+	place-items: center;
+	clip-path: inset(0 round var(--scl-flip-r));
+	font-size: calc(var(--scl-flip-w) * 0.58);
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: -0.03em;
+	font-variant-numeric: tabular-nums;
+	color: var(--scl-flip-fg);
+}
+
+.scl .scl-flip__num {
+	grid-area: 1 / 1;
+	text-box: trim-both cap alphabetic;
+	will-change: transform, opacity;
+}
+
+.scl .scl-flip__num.is-entering {
+	animation: scl-flip-in 440ms var(--scl-ease-inout) both;
+}
+
+.scl .scl-flip__num.is-leaving {
+	animation: scl-flip-out 440ms var(--scl-ease-inout) both;
+}
+
+.scl .scl-flip__tile.is-ticking .scl-flip__plate--top {
+	animation: scl-flip-tick 520ms var(--scl-ease-back) both;
+}
+
+@keyframes scl-flip-in {
+	from {
+		transform: translate3d(0, 210%, 0);
+	}
+}
+
+@keyframes scl-flip-out {
+	to {
+		transform: translate3d(0, -210%, 0);
+	}
+}
+
+@keyframes scl-flip-tick {
+	0% {
+		transform: rotateX(0deg);
+	}
+
+	30% {
+		transform: rotateX(-16deg);
+	}
+
+	100% {
+		transform: rotateX(0deg);
+	}
+}
+
+.scl .scl-flip[data-ended] .scl-flip__row {
+	display: none;
+}
+
+.scl .scl-flip__done {
+	font-size: 1.125em;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: var(--scl-red);
+}
+
+@media (max-width: 420px) {
+	.scl .scl-flip {
+		--scl-flip-h: 92px;
+		--scl-flip-w: 74px;
+		--scl-flip-r: 12px;
+	}
+
+	.scl .scl-flip__label {
+		font-size: 0.6875em;
+	}
+
+	.scl .scl-flip__digits {
+		font-size: calc(var(--scl-flip-w) * 0.56);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.scl .scl-flip__num.is-entering,
+	.scl .scl-flip__num.is-leaving,
+	.scl .scl-flip__tile.is-ticking .scl-flip__plate--top {
+		animation: none;
+	}
+
+	.scl .scl-flip__num.is-leaving {
+		display: none;
+	}
+}

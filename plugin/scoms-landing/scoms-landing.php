@@ -37,19 +37,13 @@ add_action(
 );
 
 function scl_register_assets() {
-	wp_register_style(
-		'scl-fonts',
-		'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap',
-		array(),
-		null
-	);
-
 	$css_dir = SCL_PATH . 'assets/css/';
+	wp_register_style( 'scl-fonts', SCL_URL . 'assets/css/fonts.css', array(), filemtime( $css_dir . 'fonts.css' ) );
 	wp_register_style( 'scl-base', SCL_URL . 'assets/css/base.css', array( 'scl-fonts' ), filemtime( $css_dir . 'base.css' ) );
 
 	foreach ( glob( $css_dir . '*.css' ) as $file ) {
 		$name = basename( $file, '.css' );
-		if ( 'base' === $name ) {
+		if ( 'base' === $name || 'fonts' === $name ) {
 			continue;
 		}
 		wp_register_style( 'scl-' . $name, SCL_URL . 'assets/css/' . $name . '.css', array( 'scl-base' ), filemtime( $file ) );
