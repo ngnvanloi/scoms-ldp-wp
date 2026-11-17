@@ -1,6 +1,6 @@
 .scl.scl-st {
 	padding-block: var(--scl-space);
-	background: var(--scl-cream);
+	background: var(--scl-white);
 }
 
 .scl .scl-st__list {
@@ -92,7 +92,7 @@
 }
 
 .scl .scl-st__item:focus-within .scl-st__text a {
-	color: var(--scl-cream);
+	color: var(--scl-white);
 }
 
 .scl .scl-st__text a:focus-visible {
@@ -111,11 +111,11 @@
 	}
 
 	.scl .scl-st__item:hover .scl-st__text a {
-		color: var(--scl-cream);
+		color: var(--scl-white);
 	}
 
 	.scl .scl-st__item .scl-st__text a:hover {
-		color: var(--scl-cream-2);
+		color: var(--scl-red-tint);
 		transition-delay: 0ms;
 		transition-duration: var(--scl-dur-q);
 	}

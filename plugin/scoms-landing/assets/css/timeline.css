@@ -1,6 +1,6 @@
 .scl.scl-tl {
 	padding-block: var(--scl-space);
-	background: var(--scl-cream-2);
+	background: var(--scl-white);
 }
 
 .scl .scl-tl__list {
@@ -72,14 +72,14 @@
 }
 
 .scl.is-ready .scl-tl__item:not(.is-on) .scl-tl__dot {
-	background: var(--scl-cream-2);
+	background: var(--scl-white);
 	transform: scale(0.78);
 }
 
 .scl .scl-tl__card {
 	overflow: hidden;
 	border-radius: var(--scl-r-md);
-	background: var(--scl-white);
+	background: var(--scl-tint);
 	text-align: center;
 	transition: transform var(--scl-dur-s) var(--scl-ease);
 }

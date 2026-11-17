@@ -106,7 +106,7 @@ html:has(.scl-modal[open]) {
 
 .scl .scl-modal__close:hover,
 .scl .scl-modal__close:focus-visible {
-	background: var(--scl-cream);
+	background: var(--scl-tint);
 	color: var(--scl-red);
 	transform: rotate(90deg);
 	transition-duration: var(--scl-dur-q), var(--scl-dur-q), 320ms;

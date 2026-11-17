@@ -20,7 +20,7 @@
 	gap: 10px;
 	padding: 8px 16px;
 	border-radius: var(--scl-r-pill);
-	background: var(--scl-cream);
+	background: var(--scl-tint);
 	font-size: 0.8125em;
 	font-weight: 700;
 	letter-spacing: 0.08em;
@@ -76,7 +76,7 @@
 	border: 2px solid var(--scl-red);
 	border-left: 0;
 	border-radius: 0 var(--scl-r-btn) var(--scl-r-btn) 0;
-	background: var(--scl-cream);
+	background: var(--scl-tint);
 	font-weight: 700;
 	font-variant-numeric: tabular-nums;
 	color: var(--scl-red);

@@ -1,6 +1,6 @@
 .scl.scl-fq {
 	padding-block: var(--scl-space);
-	background: var(--scl-cream-2);
+	background: var(--scl-white);
 	interpolate-size: allow-keywords;
 }
 
@@ -126,7 +126,7 @@
 
 .scl .scl-fq__note a:hover,
 .scl .scl-fq__note a:focus-visible {
-	color: var(--scl-cream-2);
+	color: var(--scl-red-tint);
 }
 
 @media (hover: hover) {

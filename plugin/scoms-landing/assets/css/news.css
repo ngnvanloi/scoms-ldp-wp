@@ -1,6 +1,6 @@
 .scl.scl-nw {
 	padding-block: var(--scl-space);
-	background: var(--scl-cream-2);
+	background: var(--scl-white);
 }
 
 .scl .scl-nw__grid {
@@ -55,7 +55,7 @@
 }
 
 .scl .scl-nw__tag--alt {
-	background: var(--scl-white);
+	background: var(--scl-tint);
 	color: var(--scl-red);
 }
 

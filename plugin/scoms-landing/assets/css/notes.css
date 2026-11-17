@@ -1,6 +1,6 @@
 .scl.scl-nt {
 	padding-block: var(--scl-space);
-	background: var(--scl-cream);
+	background: var(--scl-white);
 }
 
 .scl .scl-nt__stage {
@@ -81,7 +81,7 @@
 	margin-top: 10px;
 	padding: 14px 16px;
 	border-radius: var(--scl-r-sm);
-	background: var(--scl-cream);
+	background: var(--scl-tint);
 	font-size: 0.875em;
 }
 

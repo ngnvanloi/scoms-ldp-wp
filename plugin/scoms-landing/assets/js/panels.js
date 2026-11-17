@@ -1,44 +1,54 @@
 (function () {
 	'use strict';
 
-	function activate(root, index, focus) {
-		var tabs = root.querySelectorAll('[data-scl-panel-tab]');
-		var panels = root.querySelectorAll('[data-scl-panel]');
-		tabs.forEach(function (tab, i) {
-			var on = i === index;
-			tab.setAttribute('aria-expanded', on ? 'true' : 'false');
-			panels[i].classList.toggle('is-active', on);
-			if (on && focus) {
-				tab.focus();
-			}
-		});
-	}
-
 	function init(root) {
 		if (root.dataset.sclPanelsReady) {
 			return;
 		}
 		root.dataset.sclPanelsReady = '1';
 		var tabs = Array.prototype.slice.call(root.querySelectorAll('[data-scl-panel-tab]'));
+		var panels = Array.prototype.slice.call(root.querySelectorAll('[data-scl-panel]'));
+
+		function activate(index, moveFocus) {
+			panels.forEach(function (panel, i) {
+				var on = i === index;
+				panel.classList.toggle('is-active', on);
+				tabs[i].setAttribute('aria-expanded', on ? 'true' : 'false');
+			});
+			if (moveFocus) {
+				var body = panels[index].querySelector('.scl-hl__body');
+				if (body) {
+					body.focus({ preventScroll: true });
+				}
+			}
+		}
+
+		function visibleTabs() {
+			return tabs.filter(function (tab, i) {
+				return !panels[i].classList.contains('is-active');
+			});
+		}
 
 		tabs.forEach(function (tab, i) {
-			tab.addEventListener('click', function () {
-				activate(root, i, false);
+			tab.addEventListener('click', function (event) {
+				activate(i, event.detail === 0);
 			});
 			tab.addEventListener('keydown', function (event) {
+				var list = visibleTabs();
+				var at = list.indexOf(tab);
 				var next = null;
-				if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
-					next = (i + 1) % tabs.length;
-				} else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-					next = (i - 1 + tabs.length) % tabs.length;
+				if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+					next = list[(at + 1) % list.length];
+				} else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+					next = list[(at - 1 + list.length) % list.length];
 				} else if (event.key === 'Home') {
-					next = 0;
+					next = list[0];
 				} else if (event.key === 'End') {
-					next = tabs.length - 1;
+					next = list[list.length - 1];
 				}
-				if (next !== null) {
+				if (next) {
 					event.preventDefault();
-					activate(root, next, true);
+					next.focus();
 				}
 			});
 		});

@@ -60,12 +60,25 @@
 		}, CLEANUP_MS);
 	};
 
+	function parseTargets(root) {
+		return [root.getAttribute('data-scl-flipclock'), root.getAttribute('data-scl-flipclock-extend')]
+			.map(function (value) {
+				return value ? Date.parse(value) : NaN;
+			})
+			.filter(function (time) {
+				return !isNaN(time);
+			})
+			.sort(function (a, b) {
+				return a - b;
+			});
+	}
+
 	function init(root) {
 		if (root.dataset.sclFlipReady) {
 			return;
 		}
-		var target = Date.parse(root.getAttribute('data-scl-flipclock'));
-		if (isNaN(target)) {
+		var targets = parseTargets(root);
+		if (!targets.length) {
 			return;
 		}
 		root.dataset.sclFlipReady = '1';
@@ -74,7 +87,6 @@
 		root.querySelectorAll('[data-flip-unit]').forEach(function (el) {
 			tiles[el.getAttribute('data-flip-unit')] = new Tile(el);
 		});
-		var done = root.querySelector('.scl-flip__done');
 		var visible = true;
 		var timer = 0;
 
@@ -89,7 +101,15 @@
 				window.clearTimeout(timer);
 				return false;
 			}
-			var diff = Math.max(0, target - Date.now());
+			var now = Date.now();
+			var target = targets[targets.length - 1];
+			for (var i = 0; i < targets.length; i++) {
+				if (targets[i] > now) {
+					target = targets[i];
+					break;
+				}
+			}
+			var diff = Math.max(0, target - now);
 			var s = Math.floor(diff / 1000);
 			var values = {
 				days: pad(Math.floor(s / 86400)),
@@ -105,9 +125,6 @@
 			});
 			if (diff === 0) {
 				root.setAttribute('data-ended', '');
-				if (done) {
-					done.hidden = false;
-				}
 				return false;
 			}
 			return true;
@@ -124,8 +141,36 @@
 		}
 	}
 
+	function hideExpired(scope) {
+		var now = Date.now();
+		var nextCheck = Infinity;
+		scope.querySelectorAll('[data-scl-until]').forEach(function (el) {
+			var until = Date.parse(el.getAttribute('data-scl-until'));
+			if (isNaN(until)) {
+				return;
+			}
+			if (until <= now) {
+				el.hidden = true;
+			} else {
+				nextCheck = Math.min(nextCheck, until - now);
+			}
+		});
+		return nextCheck;
+	}
+
+	var untilTimer = 0;
+
+	function watchExpired() {
+		window.clearTimeout(untilTimer);
+		var wait = hideExpired(document);
+		if (wait !== Infinity) {
+			untilTimer = window.setTimeout(watchExpired, Math.min(wait + 50, 3600000));
+		}
+	}
+
 	function initAll(scope) {
 		(scope || document).querySelectorAll('[data-scl-flipclock]').forEach(init);
+		watchExpired();
 	}
 
 	if (document.readyState === 'loading') {

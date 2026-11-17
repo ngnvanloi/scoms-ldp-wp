@@ -8,7 +8,7 @@
 		header.dataset.sclHeaderReady = '1';
 
 		var toggle = header.querySelector('.scl-hd__toggle');
-		var links = Array.prototype.slice.call(header.querySelectorAll('.scl-hd__link'));
+		var parents = Array.prototype.slice.call(header.querySelectorAll('[data-scl-sub-toggle]'));
 		var lastY = window.scrollY;
 		var ticking = false;
 
@@ -22,20 +22,42 @@
 			}
 		}
 
+		function closeSubs(except) {
+			parents.forEach(function (button) {
+				if (button !== except) {
+					button.setAttribute('aria-expanded', 'false');
+					button.parentNode.classList.remove('is-sub-open');
+				}
+			});
+		}
+
 		if (toggle) {
 			toggle.addEventListener('click', function () {
 				setOpen(!header.classList.contains('is-open'));
 			});
 		}
 
-		links.forEach(function (link) {
-			link.addEventListener('click', function () {
-				setOpen(false);
+		parents.forEach(function (button) {
+			button.addEventListener('click', function () {
+				var open = button.getAttribute('aria-expanded') !== 'true';
+				closeSubs(button);
+				button.setAttribute('aria-expanded', open ? 'true' : 'false');
+				button.parentNode.classList.toggle('is-sub-open', open);
 			});
 		});
 
+		document.addEventListener('click', function (event) {
+			if (!header.contains(event.target)) {
+				closeSubs(null);
+			}
+		});
+
 		document.addEventListener('keydown', function (event) {
-			if (event.key === 'Escape' && header.classList.contains('is-open')) {
+			if (event.key !== 'Escape') {
+				return;
+			}
+			closeSubs(null);
+			if (header.classList.contains('is-open')) {
 				setOpen(false);
 				if (toggle) {
 					toggle.focus();
@@ -64,34 +86,6 @@
 			}
 		}, { passive: true });
 		onScroll();
-
-		if (!('IntersectionObserver' in window)) {
-			return;
-		}
-		var targets = links.map(function (link) {
-			var id = (link.getAttribute('href') || '').replace('#', '');
-			return id ? document.getElementById(id) : null;
-		});
-		var visible = {};
-		var observer = new IntersectionObserver(function (entries) {
-			entries.forEach(function (entry) {
-				visible[entry.target.id] = entry.isIntersecting;
-			});
-			var current = null;
-			targets.forEach(function (target) {
-				if (target && !current && visible[target.id]) {
-					current = target.id;
-				}
-			});
-			links.forEach(function (link, i) {
-				link.setAttribute('aria-current', targets[i] && targets[i].id === current ? 'true' : 'false');
-			});
-		}, { rootMargin: '-40% 0px -55% 0px' });
-		targets.forEach(function (target) {
-			if (target) {
-				observer.observe(target);
-			}
-		});
 	}
 
 	function initAll(scope) {

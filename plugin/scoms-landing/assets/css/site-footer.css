@@ -1,7 +1,7 @@
 .scl.scl.scl-ft {
 	padding-top: clamp(56px, 8vw, 96px);
 	background: var(--scl-red);
-	color: var(--scl-cream);
+	color: var(--scl-white);
 }
 
 .scl .scl-ft__grid {
@@ -21,15 +21,15 @@
 	width: 160px;
 	height: 48px;
 	border-radius: var(--scl-r-xs);
-	background: rgb(255 246 228 / 0.14);
-	color: var(--scl-cream);
+	background: rgb(255 255 255 / 0.14);
+	color: var(--scl-white);
 }
 
 .scl .scl-ft__about {
 	max-width: 40ch;
 	font-size: 0.9375em;
 	line-height: 1.65;
-	color: rgb(255 246 228 / 0.82);
+	color: rgb(255 255 255 / 0.82);
 }
 
 .scl .scl-ft__col {
@@ -43,7 +43,7 @@
 	font-weight: 700;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
-	color: rgb(255 246 228 / 0.86);
+	color: rgb(255 255 255 / 0.86);
 }
 
 .scl .scl-ft__list {
@@ -54,12 +54,12 @@
 .scl .scl-ft__list li {
 	font-size: 0.9375em;
 	line-height: 1.5;
-	color: rgb(255 246 228 / 0.9);
+	color: rgb(255 255 255 / 0.9);
 }
 
 .scl .scl-ft__link {
 	display: inline-block;
-	color: var(--scl-cream);
+	color: var(--scl-white);
 	transition: color 200ms var(--scl-ease), transform 200ms var(--scl-ease);
 }
 
@@ -70,8 +70,22 @@
 	transition-duration: var(--scl-dur-q);
 }
 
+.scl .scl-ft__tag {
+	display: inline-block;
+	margin-left: 6px;
+	padding: 1px 8px;
+	border-radius: var(--scl-r-pill);
+	background: rgb(255 255 255 / 0.16);
+	font-size: 0.6875em;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	vertical-align: 0.15em;
+	color: var(--scl-white);
+}
+
 .scl.scl-ft :where(a, button):focus-visible {
-	outline-color: var(--scl-cream);
+	outline-color: var(--scl-white);
 }
 
 .scl .scl-ft__bottom {
@@ -81,9 +95,9 @@
 	justify-content: space-between;
 	gap: 12px 24px;
 	padding-block: 20px;
-	border-top: 1px solid rgb(255 246 228 / 0.2);
+	border-top: 1px solid rgb(255 255 255 / 0.2);
 	font-size: 0.8125em;
-	color: rgb(255 246 228 / 0.86);
+	color: rgb(255 255 255 / 0.86);
 }
 
 .scl .scl-ft__top {
@@ -91,7 +105,7 @@
 	align-items: center;
 	gap: 8px;
 	font-weight: 700;
-	color: var(--scl-cream);
+	color: var(--scl-white);
 	transition: color 200ms var(--scl-ease);
 }
 

@@ -3,7 +3,7 @@
 	--scl-flip-w: calc(var(--scl-flip-h) * 0.84);
 	--scl-flip-r: clamp(14px, 1.6vw, 18px);
 	--scl-flip-gap: 3px;
-	--scl-flip-bg: var(--scl-cream-2);
+	--scl-flip-bg: var(--scl-tint-2);
 	--scl-flip-fg: var(--scl-red);
 	display: grid;
 	justify-items: center;
@@ -125,17 +125,6 @@
 	100% {
 		transform: rotateX(0deg);
 	}
-}
-
-.scl .scl-flip[data-ended] .scl-flip__row {
-	display: none;
-}
-
-.scl .scl-flip__done {
-	font-size: 1.125em;
-	font-weight: 800;
-	text-transform: uppercase;
-	color: var(--scl-red);
 }
 
 @media (max-width: 420px) {

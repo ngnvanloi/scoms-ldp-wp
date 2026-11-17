@@ -1,6 +1,4 @@
 .scl {
-	--scl-cream: #fff6e4;
-	--scl-cream-2: #fbedd2;
 	--scl-white: #ffffff;
 	--scl-black: #000000;
 	--scl-ink: #2c2c2c;
@@ -12,6 +10,8 @@
 	--scl-red-2: #c90000;
 	--scl-red-3: #b80000;
 	--scl-red-tint: #edbfbf;
+	--scl-tint: color-mix(in oklab, var(--scl-red-tint) 26%, var(--scl-white));
+	--scl-tint-2: color-mix(in oklab, var(--scl-red-tint) 48%, var(--scl-white));
 	--scl-gray: #d9d9d9;
 	--scl-gray-2: #717171;
 	--scl-gray-3: #f2f2f2;
@@ -23,7 +23,7 @@
 	--scl-r-lg: 24px;
 	--scl-r-pill: 999px;
 	--scl-r-btn: var(--scl-r-sm);
-	--scl-grad-soft: linear-gradient(165deg, color-mix(in oklab, var(--scl-red-tint) 40%, var(--scl-cream)) 0%, color-mix(in oklab, var(--scl-red-tint) 88%, var(--scl-cream)) 100%);
+	--scl-grad-soft: linear-gradient(165deg, color-mix(in oklab, var(--scl-red-tint) 34%, var(--scl-white)) 0%, color-mix(in oklab, var(--scl-red-tint) 82%, var(--scl-white)) 100%);
 	--scl-grad-red: linear-gradient(160deg, var(--scl-red-1) 0%, var(--scl-red) 58%, var(--scl-red-logo) 100%);
 	--scl-hover-in: 260ms;
 	--scl-hover-out: 420ms;
@@ -41,7 +41,7 @@
 	--scl-max: 1200px;
 	--scl-gutter: clamp(16px, 4vw, 40px);
 	--scl-space: clamp(72px, 10vw, 128px);
-	--scl-bg: var(--scl-cream);
+	--scl-bg: var(--scl-white);
 	--scl-text: var(--scl-ink);
 	--scl-accent: var(--scl-red);
 	--scl-accent-ink: var(--scl-white);
@@ -53,7 +53,7 @@
 	margin: 0;
 	padding: 0;
 	border: 0;
-	background: var(--scl-cream);
+	background: var(--scl-white);
 	font-family: var(--scl-font);
 	font-size: 16px;
 	font-weight: 400;
@@ -166,6 +166,10 @@
 	clip: rect(0, 0, 0, 0);
 	white-space: nowrap;
 	border: 0;
+}
+
+.scl.scl [hidden] {
+	display: none !important;
 }
 
 .scl .scl-head {
@@ -300,8 +304,8 @@
 }
 
 .scl .scl-ph--warm {
-	background: #f3dcc0;
-	color: #8a5a3c;
+	background: var(--scl-tint-2);
+	color: var(--scl-red);
 }
 
 .scl .scl-ph--red {
