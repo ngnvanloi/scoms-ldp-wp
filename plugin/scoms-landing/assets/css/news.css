@@ -99,12 +99,6 @@
 	outline-offset: 3px;
 }
 
-.scl .scl-nw__more {
-	display: flex;
-	justify-content: center;
-	margin-top: clamp(28px, 4vw, 44px);
-}
-
 @media (hover: hover) {
 	.scl .scl-nw__card:hover .scl-nw__thumb {
 		transform: scale(1.06);
