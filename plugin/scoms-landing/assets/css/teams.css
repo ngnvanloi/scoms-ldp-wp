@@ -35,6 +35,11 @@
 	inset: 0;
 }
 
+.scl img.scl-tm__media-in {
+	width: 100%;
+	height: 100%;
+}
+
 .scl .scl-tm__media-in.scl-ph {
 	background: var(--scl-white);
 	color: var(--scl-red);
