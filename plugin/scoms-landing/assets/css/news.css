@@ -29,6 +29,12 @@
 	transition: transform 900ms var(--scl-ease);
 }
 
+.scl img.scl-nw__thumb {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
 .scl .scl-nw__card::after {
 	content: "";
 	position: absolute;
@@ -52,11 +58,6 @@
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
 	color: var(--scl-white);
-}
-
-.scl .scl-nw__tag--alt {
-	background: var(--scl-tint);
-	color: var(--scl-red);
 }
 
 .scl .scl-nw__bottom {

@@ -111,6 +111,10 @@
 	color: var(--scl-ink-2);
 }
 
+.scl .scl-fq__a p + p {
+	margin-top: 8px;
+}
+
 .scl .scl-fq__note {
 	margin-top: 24px;
 	text-align: center;

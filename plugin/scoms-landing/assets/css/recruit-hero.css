@@ -14,21 +14,6 @@
 	width: 100%;
 }
 
-.scl .scl-rh__eyebrow {
-	display: inline-flex;
-	align-items: center;
-	gap: 10px;
-	padding: 8px 16px;
-	border-radius: var(--scl-r-pill);
-	background: var(--scl-tint);
-	font-size: 0.8125em;
-	font-weight: 700;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-	color: var(--scl-red);
-	animation: scl-rh-up var(--scl-dur-l) var(--scl-ease) 80ms both;
-}
-
 .scl .scl-rh__title {
 	font-size: clamp(2.5em, 8.4cqi, 7.25em);
 	font-weight: 800;
@@ -46,13 +31,6 @@
 .scl .scl-rh__title em {
 	font-style: normal;
 	color: var(--scl-red);
-}
-
-.scl .scl-rh__lead {
-	max-width: 46ch;
-	font-size: clamp(1em, 1.5vw, 1.125em);
-	color: var(--scl-ink-2);
-	animation: scl-rh-up var(--scl-dur-l) var(--scl-ease) 420ms both;
 }
 
 .scl .scl-rh__cta {
@@ -133,9 +111,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.scl .scl-rh__eyebrow,
 	.scl .scl-rh__title .scl-line > span,
-	.scl .scl-rh__lead,
 	.scl .scl-rh__cta,
 	.scl .scl-rh__date,
 	.scl .scl-rh__clock {

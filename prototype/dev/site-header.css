@@ -33,12 +33,9 @@
 	border-radius: var(--scl-r-xs);
 }
 
-.scl .scl-hd__logo .scl-ph {
-	width: 136px;
-	height: 40px;
-	border-radius: var(--scl-r-xs);
-	background: var(--scl-tint);
-	color: var(--scl-red);
+.scl .scl-hd__logo img {
+	width: auto;
+	height: 48px;
 }
 
 .scl .scl-hd__nav {

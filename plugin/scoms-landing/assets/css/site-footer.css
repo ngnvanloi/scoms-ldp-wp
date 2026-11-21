@@ -6,30 +6,97 @@
 
 .scl .scl-ft__grid {
 	display: grid;
-	grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
+	grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.3fr);
 	gap: clamp(28px, 4vw, 56px);
 	padding-bottom: clamp(40px, 6vw, 72px);
 }
 
 .scl .scl-ft__brand {
 	display: grid;
-	gap: 18px;
+	gap: 14px;
 	align-content: start;
+	justify-items: start;
 }
 
 .scl .scl-ft__logo {
-	width: 160px;
-	height: 48px;
-	border-radius: var(--scl-r-xs);
-	background: rgb(255 255 255 / 0.14);
+	display: block;
+	margin-bottom: 8px;
+	padding: 10px 14px;
+	border-radius: var(--scl-r-sm);
+	background: var(--scl-white);
+}
+
+.scl .scl-ft__logo img {
+	width: auto;
+	height: 64px;
+}
+
+.scl .scl-ft__org {
+	display: grid;
+	gap: 4px;
+	font-size: 0.9375em;
+	line-height: 1.5;
+	color: rgb(255 255 255 / 0.86);
+}
+
+.scl .scl-ft__org strong {
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
 	color: var(--scl-white);
 }
 
-.scl .scl-ft__about {
-	max-width: 40ch;
-	font-size: 0.9375em;
-	line-height: 1.65;
-	color: rgb(255 255 255 / 0.82);
+.scl .scl-ft__social {
+	display: flex;
+	gap: 10px;
+	margin-top: 4px;
+}
+
+.scl .scl-ft__icon {
+	display: grid;
+	place-items: center;
+	width: 40px;
+	height: 40px;
+	border: 1.5px solid rgb(255 255 255 / 0.4);
+	border-radius: 50%;
+	color: var(--scl-white);
+	transition: background-color 200ms var(--scl-ease), color 200ms var(--scl-ease), border-color 200ms var(--scl-ease);
+}
+
+.scl .scl-ft__icon svg {
+	width: 18px;
+	height: 18px;
+}
+
+.scl .scl-ft__icon:hover,
+.scl .scl-ft__icon:focus-visible {
+	border-color: var(--scl-white);
+	background: var(--scl-white);
+	color: var(--scl-red);
+	transition-duration: var(--scl-dur-q);
+}
+
+.scl .scl-ft__contacts li {
+	display: flex;
+	gap: 10px;
+	align-items: flex-start;
+}
+
+.scl .scl-ft__contacts svg {
+	flex-shrink: 0;
+	width: 18px;
+	height: 18px;
+	margin-top: 2px;
+}
+
+.scl .scl-ft__nowrap {
+	white-space: nowrap;
+}
+
+.scl .scl-ft__contacts small {
+	display: block;
+	font-size: 0.875em;
+	color: rgb(255 255 255 / 0.72);
 }
 
 .scl .scl-ft__col {
@@ -68,20 +135,6 @@
 	color: var(--scl-white);
 	transform: translateX(3px);
 	transition-duration: var(--scl-dur-q);
-}
-
-.scl .scl-ft__tag {
-	display: inline-block;
-	margin-left: 6px;
-	padding: 1px 8px;
-	border-radius: var(--scl-r-pill);
-	background: rgb(255 255 255 / 0.16);
-	font-size: 0.6875em;
-	font-weight: 700;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-	vertical-align: 0.15em;
-	color: var(--scl-white);
 }
 
 .scl.scl-ft :where(a, button):focus-visible {
@@ -143,6 +196,7 @@
 
 @media (prefers-reduced-motion: reduce) {
 	.scl .scl-ft__link,
+	.scl .scl-ft__icon,
 	.scl .scl-ft__top svg {
 		transition: none;
 	}

@@ -117,12 +117,6 @@
 	height: 0.7em;
 }
 
-.scl .scl-tl__desc {
-	font-size: 0.9375em;
-	line-height: 1.5;
-	color: var(--scl-ink-2);
-}
-
 @media (hover: hover) {
 	.scl .scl-tl__card:hover {
 		transform: translateY(-3px);

@@ -28,18 +28,11 @@
 	overflow: hidden;
 	aspect-ratio: 4 / 5;
 	border-radius: var(--scl-r-md);
-	cursor: zoom-in;
-}
-
-.scl .scl-tm__media:focus-visible {
-	outline-color: var(--scl-white);
-	outline-offset: -4px;
 }
 
 .scl .scl-tm__media-in {
 	position: absolute;
 	inset: 0;
-	transition: transform 700ms var(--scl-ease);
 }
 
 .scl .scl-tm__media-in.scl-ph {
@@ -61,31 +54,6 @@
 	color: var(--scl-white);
 }
 
-.scl .scl-tm__hint {
-	position: absolute;
-	right: 10px;
-	bottom: 10px;
-	z-index: 1;
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	padding: 6px 12px;
-	border-radius: var(--scl-r-pill);
-	background: var(--scl-red);
-	font-size: 0.75em;
-	font-weight: 800;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-	color: var(--scl-white);
-	transition: transform var(--scl-dur-s) var(--scl-ease);
-}
-
-.scl .scl-tm__hint svg {
-	width: 14px;
-	height: 14px;
-	transition: transform var(--scl-dur-s) var(--scl-ease);
-}
-
 .scl .scl-tm__body {
 	display: grid;
 	flex: 1;
@@ -100,13 +68,6 @@
 	line-height: 1.25;
 	color: var(--scl-black);
 	transition: color calc(var(--scl-tone-t) * 0.75) var(--scl-ease);
-}
-
-.scl .scl-tm__desc {
-	font-size: 0.875em;
-	line-height: 1.5;
-	color: var(--scl-ink);
-	transition: color calc(var(--scl-tone-t) * 0.75) var(--scl-ease) var(--scl-follow);
 }
 
 .scl .scl-tm__apply {
@@ -138,10 +99,6 @@
 	color: var(--scl-white);
 }
 
-.scl .scl-tm__card:focus-within .scl-tm__desc {
-	color: rgb(255 255 255 / 0.84);
-}
-
 .scl .scl-tm__card:focus-within .scl-tm__apply {
 	background: var(--scl-white);
 	color: var(--scl-red);
@@ -160,20 +117,8 @@
 		translate: 0 -4px;
 	}
 
-	.scl .scl-tm__card:hover .scl-tm__media-in {
-		transform: scale(1.05);
-	}
-
-	.scl .scl-tm__media:hover .scl-tm__hint svg {
-		transform: rotate(90deg);
-	}
-
 	.scl .scl-tm__card:hover .scl-tm__name {
 		color: var(--scl-white);
-	}
-
-	.scl .scl-tm__card:hover .scl-tm__desc {
-		color: rgb(255 255 255 / 0.84);
 	}
 
 	.scl .scl-tm__card:hover .scl-tm__apply {
@@ -319,17 +264,11 @@
 		--scl-tm-w: min(70vw, 280px);
 	}
 
-	.scl .scl-tm__carousel:not(.is-carousel) .scl-tm__desc {
-		display: none;
-	}
 }
 
 @media (prefers-reduced-motion: reduce) {
 	.scl .scl-tm__card,
-	.scl .scl-tm__media-in,
-	.scl .scl-tm__hint svg,
 	.scl .scl-tm__name,
-	.scl .scl-tm__desc,
 	.scl .scl-tm__apply,
 	.scl .scl-tm__apply svg,
 	.scl .scl-tm__arrow {
